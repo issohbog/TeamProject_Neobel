@@ -1,5 +1,7 @@
 package Service;
 
-public interface OrderDetailService {
+import DTO.OrderDetail;
+
+public interface OrderDetailService extends BaseService<OrderDetail>{
 
 }
