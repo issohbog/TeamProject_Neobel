@@ -1,5 +1,7 @@
 package Service;
 
-public interface ProductService {
+import DTO.Product;
 
+public interface ProductService extends BaseService<Product> {
+	
 }
