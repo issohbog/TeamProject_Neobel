@@ -1,5 +1,7 @@
 package Service;
 
-public interface UserService {
+import DTO.User;
+
+public interface UserService extends BaseService<User> {
 
 }
