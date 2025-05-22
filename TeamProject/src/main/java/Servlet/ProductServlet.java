@@ -1,6 +1,7 @@
 package Servlet;
 
 import jakarta.servlet.ServletException;
+
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
@@ -28,19 +29,19 @@ public class ProductServlet extends HttpServlet {
 //    }
     
     
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        // DAO 객체 생성
-        ProductDAO productDAO = new ProductDAO();
-        
-        // 제품 리스트 가져오기
-        List<Product> productList = productDAO.getAllProducts();
-
-        // JSP에 데이터 전달
-        request.setAttribute("productList", productList);
-
-        // 포워딩
-        request.getRequestDispatcher("/WEB-INF/views/productList.jsp").forward(request, response);
-    }
+//    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+//        // DAO 객체 생성
+//        ProductDAO productDAO = new ProductDAO();
+//        
+//        // 제품 리스트 가져오기
+//        List<Product> productList = productDAO.getAllProducts();
+//
+//        // JSP에 데이터 전달
+//        request.setAttribute("productList", productList);
+//
+//        // 포워딩
+//        request.getRequestDispatcher("/WEB-INF/views/productList.jsp").forward(request, response);
+//    }
 
 
     // POST 요청 시에도 GET 처리로 위임
