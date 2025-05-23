@@ -27,11 +27,11 @@ public class CartServiceImpl extends BaseServiceImpl<CartDAO, Cart> implements C
 		try {
 			list = dao.listBy(map);
 
-			// ★★★ cart join product
+			// ★★★ cart join product 
 			for (Cart cart : list) {
 				int productNo = cart.getProductNo();
 				Product product = productDAO.select(productNo);
-				cart.setProduct(product);
+				cart.setProduct(product); 
 			}
 			
 			

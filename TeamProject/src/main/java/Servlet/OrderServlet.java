@@ -4,9 +4,14 @@ import java.io.IOException;
 import java.util.List;
 
 import DAO.CartDAO;
+import DAO.UserDAO;
 import DTO.Cart;
+import DTO.Order;
+import DTO.User;
 import Service.CartService;
 import Service.CartServiceImpl;
+import Service.UserService;
+import Service.UserServiceImpl;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -60,7 +65,73 @@ public class OrderServlet extends HttpServlet {
 
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		request.setCharacterEncoding("UTF-8");
+		
+		// 1. form에서 전송된 데이터 받기 
+		// user구현 완료되면 주석 해제하고, 세션에서 받아오기
+		// int userNo = Integer.parseInt(request.getParameter("userNo"));
+		int userNo = 1; 
+		int totalPrice = Integer.parseInt(request.getParameter("totalPrice"));
+		String payment = request.getParameter("payment");
+		
+		// 2. 사용자 정보 조회
+		UserDAO userDao = new UserDAO();
+		UserService userService = new UserServiceImpl(userDao);
+		
+		User user = userService.selectbyUserNo(userNo);
+		
+		// 3. Order 객체 생성 
+		Order order = Order.builder()
+						   .userNo(userNo)
+						   .totalPrice(totalPrice)
+						   .payment(payment)
+						   .name(user.getUserName())
+						   .postCode(user.getPostcode())
+						   .addr(user.getAddr())
+						   .addrDetail(user.getAddrDetail())
+						   .req(user.getReq())
+						   .build();
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		
 	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 
 }

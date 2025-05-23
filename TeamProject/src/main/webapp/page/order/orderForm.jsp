@@ -12,7 +12,7 @@
 <body>
 	<jsp:include page="/layout/header.jsp" />
 	<%-- [Contents] ######################################################### --%>
-	<form action="${root}/order/orderDetail" method="post">
+	<form action="${root}/order/" method="post">
 		<div class="payment-container">
 			
 		    <!-- 제목 -->
