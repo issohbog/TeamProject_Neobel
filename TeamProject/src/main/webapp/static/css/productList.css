@@ -7,7 +7,7 @@
   justify-content: center; /* 가운데 정렬 */
 }
 
-.product-card {
+.product-card2 {
   display: block;
   width: 200px;
   border: 1px solid #ccc;
@@ -20,38 +20,38 @@
   transition: transform 0.2s ease;
 }
 
-.product-card:hover {
+.product-card2:hover {
   transform: scale(1.05);
   box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
 
-.product-card img {
+.product-card2 img {
   width: 100%;
   height: auto;
   display: block;
 }
 
-.product-info {
+.product-info2 {
   padding: 10px;
 }
 
-.product-name {
+.product-name2 {
   font-size: 16px;
   margin: 0 0 5px 0;
 }
 
-.product-name-bold {
+.product-name2-bold {
   font-weight: 700;
   margin: 0 0 5px 0;
 }
 
-.product-desc {
+.product-desc2 {
   font-size: 14px;
   color: #666;
   margin: 0;
 }
 
-.price-box {
+.price-box2 {
   padding: 10px;
   border-top: 1px solid #eee;
   font-weight: 600;
