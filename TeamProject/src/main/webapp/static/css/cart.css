@@ -1,0 +1,148 @@
+@charset "UTF-8";
+@font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+
+body {
+  font-family: 'Pretendard-Regular', Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.cart-container {
+  width: 70%;
+  margin: 0 auto;
+  padding: 40px 0;
+}
+
+.cart-title {
+  text-align: center;
+  font-size: 32px;
+  margin-bottom: 30px;
+  font-weight: 100;   
+}
+
+.cart-container-inner {
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    margin-bottom: 5%;
+}
+
+.cart-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+  margin-top: 5%;
+}
+
+.cart-table th, .cart-table td {
+  border-bottom: 1px solid #ccc;
+  padding: 15px;
+  text-align: center;
+  vertical-align: middle;
+  font-weight: 100;
+}
+
+.cart-product-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.cart-product-info img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+}
+
+.cart-product-info div {
+  max-width: 140px;         /* 너비 제한을 줘야 줄바꿈이 일어남 */
+  word-wrap: break-word;    /* 단어 기준으로 줄바꿈 */
+  word-break: keep-all;     /* 한글은 단어 단위로 줄바꿈 */
+}
+
+
+.price-info .original-price {
+  text-decoration: line-through;
+  font-size: 12px;
+  color: #999;
+}
+
+.price-info .sale-price {
+  font-weight: bold;
+  color: black;
+}
+
+.quantity-container {
+    display: flex;
+    justify-content: center;
+}
+
+.quantity-input {
+    width: 30px;
+    height: 26.5px;
+    box-sizing: border-box;
+    border: 1px solid #CCC;
+    border-radius: 3px;
+}
+
+
+
+.quantity-button {
+    display: flex;
+    flex-direction: column;
+    height: 26px;
+    position: relative;
+	top: -7px;
+
+}
+
+.quantity-button a {
+    height: 13px;
+}
+
+.delete-btn {
+  background-color: white;
+  border: 1px solid #333;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.cart-summary {
+    text-align: center;
+    font-size: 16px;
+    margin-bottom: 5%;
+    margin-top: 5%;
+}
+
+.cart-delete {
+    display: flex;
+    justify-content: flex-end;
+    gap: 2%;
+}
+
+.cart-delete a {
+    color: black;
+}
+
+.cart-footer {
+  text-align: center;
+}
+
+.buy-btn {
+  background-color: black;
+  color: white;
+  padding: 15px 60px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  width: 600px;
+  height: 60px;
+}
+
