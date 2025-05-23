@@ -10,6 +10,6 @@
 
 <script src="<%= root %>/static/js/productDetail.js"></script> 
 
-<script src="<%= root %>/static/js/cart.js"></script> 
+<script src="<%= root %>/static/js/cart.js" defer></script> 
 <script src="<%= root %>/static/js/orderFrom.js"></script> 
 

@@ -10,21 +10,22 @@ document.addEventListener("DOMContentLoaded", function() {
     const Basket = {
 	
 	// 수량 증가 함수 	
-    addQuantityShortcut: function (inputId, index, cartNo) {
+    addQuantityShortcut: function (root, inputId, index, cartNo) {
+		
       const input = document.getElementById(inputId);		// ID로 수량 input요소 찾기
       let current = parseInt(input.value, 10);				// 현재 수량을 숫자로 파싱
       input.value = current + 1;							// 수량 1 증가
 	  Basket.updateRowAndTotal(input);						// 해당 상품 줄의 금액, 전체 합계 다시 계산
-	  Basket.updateQuantityAjax(cartNo, current + 1);		// 바뀐 수량 서버에 반영
+	  Basket.updateQuantityAjax(root,cartNo, current + 1);		// 바뀐 수량 서버에 반영
     },
 
-    outQuantityShortcut: function (inputId, index, cartNo) {
+    outQuantityShortcut: function (root, inputId, index, cartNo) {
       const input = document.getElementById(inputId);
       let current = parseInt(input.value, 10);
       if (current > 1) {
         input.value = current - 1;
 		Basket.updateRowAndTotal(input);
-		Basket.updateQuantityAjax(cartNo, current - 1);		// 바뀐 수량 서버에 반영
+		Basket.updateQuantityAjax(root, cartNo, current - 1);		// 바뀐 수량 서버에 반영
       }
     }, 
 	
@@ -70,8 +71,10 @@ document.addEventListener("DOMContentLoaded", function() {
 	     });
 	   }, 
 	   
-	   updateQuantityAjax: function (cartNo, newQuantity) {
-	     fetch('/cart/updateQuantity', {
+	   updateQuantityAjax: function (root, cartNo, newQuantity) {
+		
+		console.log("전송할 값 → root: " , root, "cartNo:", cartNo, "quantity:", newQuantity); 
+	     fetch(root + '/cart/updateQuantity', {
 	       method: 'POST',
 	       headers: {
 	         'Content-Type': 'application/json'

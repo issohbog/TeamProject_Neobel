@@ -53,5 +53,47 @@ public class CartServiceImpl extends BaseServiceImpl<CartDAO, Cart> implements C
 		return result > 0;
 	}
 
+	@Override
+	public boolean updateQuantity(int cartNo, int quantity) {
+		int result = 0; 
+		try {
+			Cart cart = new Cart();
+			cart.setCartNo(cartNo);
+			cart.setQuantity(quantity);
+			result = cartDAO.update(cart);
+//			result = cartDAO.update(cart, "quantity");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return result > 0;
+	}
+
+	@Override
+	public boolean clearCart(int userNo) {
+		int result = 0; 
+		Map<String, Object> map = new HashMap<String, Object>();
+		map.put("userNo", userNo);
+		try {
+			result = cartDAO.deleteBy(map);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return result > 0;
+	}
+	
+	
+	
+
 	 
 }
+
+
+
+
+
+
+
+
+
+
+
