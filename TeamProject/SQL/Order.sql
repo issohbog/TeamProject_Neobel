@@ -1,3 +1,4 @@
+DROP TABLE IF EXISTS `orders`;
 CREATE TABLE `orders` (
 	`order_no` INT NOT NULL AUTO_INCREMENT COMMENT '주문고유번호',
 	`product_no` INT NOT NULL COMMENT '상품고유번호',
@@ -11,8 +12,8 @@ CREATE TABLE `orders` (
 	`phone` VARCHAR(200) NOT NULL COMMENT '휴대폰 번호',
 	`req` VARCHAR(100) NULL DEFAULT '조심히 안전하게 와주세요' COMMENT '배송요청사항',
 	PRIMARY KEY (`order_no`),
-	FOREIGN KEY (`user_no`) REFERENCES `users`(`user_no`),
-	FOREIGN KEY (`product_no`) REFERENCES `products`(`product_no`)
+	FOREIGN KEY (`user_no`) REFERENCES `users`(`user_no`) ON DELETE CASCADE,
+	FOREIGN KEY (`product_no`) REFERENCES `products`(`product_no`) ON DELETE CASCADE
 );
 
 INSERT INTO orders (product_no, user_no, total_price, order_date, payment, name, post_code, addr, phone, req)

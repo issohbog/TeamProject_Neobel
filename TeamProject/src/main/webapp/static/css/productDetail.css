@@ -1,79 +1,74 @@
 @charset "UTF-8";
 
-
-
- .detail-wrapper {
-      width: 1905px;
-      height: 1295px;
-      margin: 0 auto;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .content-box {
-      display: flex;
-      width: 900px;
-      height: 700px;
-    margin-top: -300px;
-    }
-
-    .product-image {
-      width: 495px;
-      height: 477px;
-    }
-
-    .product-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .product-options {
-      width: 369px;
-      height: 471px;
-      margin-left: 36px;
-      display: flex;
-      flex-direction: column;
-      justify-content: start;
-    }
-
-    .product-name, .product-volume {
-        /*font-size: 15px;*/
-        color: #9fa19f;
-       
-      }
-      
-     
-
-    .product-name {
-     width: 369px;
-      height: 45px;
-      font-size: 20px;
-       font-weight: 500;
-       color: #000;
-    }
-
-    .product-volume {
-      height: 69px;
-      font-size: 15px;
-      border-bottom: 1px solid #e3e3e3;
-      color:    #9FA19F ;
-    }
-
-    .product-price-box {
-      width: 369px;
-      height: 95px;
-      display: flex;
-      align-items: center;
-      font-size: 20px;
-      font-weight: bold;
-      
-    }
-
-.quantity-box {
+.detail-wrapper3 {
+  width: auto;
+  height: 1295px;
+  margin: 0 auto;
   display: flex;
-  width: 369px; /* 기존보다 줄여도 충분함 */
+  align-items: center;
+  justify-content: center;
+}
+
+.content-box3 {
+  display: flex;
+  width: 900px;
+  height: 700px;
+  margin-top: -300px;
+
+}
+
+.product-image3 {
+  width: 495px;
+  height: 477px;
+}
+
+.product-image3 img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.product-options3 {
+  width: 369px;
+  height: 471px;
+  margin-left: 36px;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+}
+
+.product-name3,
+.product-volume3 {
+  color: #9fa19f;
+}
+
+.product-name3 {
+  width: 369px;
+  height: 45px;
+  font-size: 20px;
+  font-weight: 500;
+  color: #000;
+}
+
+.product-volume3 {
+  height: 69px;
+  font-size: 15px;
+  border-bottom: 1px solid #e3e3e3;
+  color: #9FA19F;
+}
+
+.product-price-box3 {
+  width: 369px;
+  height: 95px;
+  display: flex;
+  align-items: center;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.quantity-box3 {
+  display: flex;
+  width: 369px;
   height: 40px;
   border: 1px solid #ccc;
   font-size: 15px;
@@ -83,7 +78,7 @@
   overflow: hidden;
 }
 
-.quantity-number {
+.quantity-number3 {
   flex: 1;
   text-align: center;
   font-size: 16px;
@@ -91,13 +86,13 @@
   border-right: 1px solid #ccc;
 }
 
-.quantity-controls {
+.quantity-controls3 {
   display: flex;
   flex-direction: column;
-  width: 30px; /* 충분히 눌릴 수 있게 확보 */
+  width: 30px;
 }
 
-.quantity-controls button {
+.quantity-controls3 button {
   flex: 1;
   border: none;
   background-color: #fff;
@@ -107,54 +102,49 @@
   border-top: 1px solid #ccc;
 }
 
-.quantity-controls button:first-child {
+.quantity-controls3 button:first-child {
   border-top: none;
 }
 
+.total-price-box3 {
+  width: 369px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 20px;
+  color: #000;
+  margin-top: 10px;
+}
 
-    .total-price-box {
-      width: 369px;
-      height: 40px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      font-size: 20px;
-      color: #000;
-      margin-top: 10px;
-    
-      
-    }
-    .total {
-        width: 200px;
-        height: 38px;
-    
-    }
-    .price{
- 
-        width: 100px;
-        height: 38px;
-       
-    }
- 
-    
-    .button {
-      width: 369px;
-      height: 55px;
-      font-size: 15px;
-      text-align: center;
-      line-height: 55px;
-      margin-top: 10px;
-      text-decoration: none;
-      display: block;
-    }
+.total3 {
+  width: 200px;
+  height: 38px;
+}
 
-    .cart-button {
-      background-color: #fff;
-      color: #000;
-      border: 1px solid #000;
-    }
+.price3 {
+  width: 100px;
+  height: 38px;
+}
 
-    .buy-button {
-      background-color: #000;
-      color: #fff;
-    }
+.button3 {
+  width: 369px;
+  height: 55px;
+  font-size: 15px;
+  text-align: center;
+  line-height: 55px;
+  margin-top: 10px;
+  text-decoration: none;
+  display: block;
+}
+
+.cart-button3 {
+  background-color: #fff;
+  color: #000;
+  border: 1px solid #000;
+}
+
+.buy-button3 {
+  background-color: #000;
+  color: #fff;
+}

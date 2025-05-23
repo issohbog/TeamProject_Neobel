@@ -12,43 +12,52 @@
 <body>
 	<jsp:include page="/layout/header.jsp" />
 	<%-- [Contents] ######################################################### --%>
-		<div class="detail-wrapper">
-  <div class="content-box">
-    <div class="product-image">
-      <img src="${pageContext.request.contextPath}${product.image_path}" alt="${product.ProductName}">
+	<div class="detail-wrapper3">
+  <div class="content-box3">
+    <div class="product-image3">
+       <img src="${product.imagePath}" alt="${product.productName}">
     </div>
 
-    <div class="product-options">
-      <div class="product-name">${product.ProductName}</div>
-      <div class="product-volume">용량 정보 없음</div> <%-- DTO에 volume 없음 --%>
-
-      <div class="product-price-box">
-        <span id="unit-price">${product.price}원</span>
+    <div class="product-options3">
+      <div class="product-name3">${product.productName} 상품명</div>
+      <div class="product-volume3">
+        <c:choose>
+          <c:when test="${empty product.description}">
+            상세정보 없음
+          </c:when>
+          <c:otherwise>
+            ${product.description}
+          </c:otherwise>
+        </c:choose>
       </div>
 
-      <div class="quantity-box" id="product" data-price="${product.price}">
-        <div class="quantity-number" id="quantity">1</div>
-        <div class="quantity-controls">
+      <div class="product-price-box3">
+        <span id="unit-price3">${product.price}원</span>
+      </div>
+
+      <div class="quantity-box3" id="product3" data-price="${product.price}">
+        <div class="quantity-number3" id="quantity3">1</div>
+        <div class="quantity-controls3">
           <button onclick="increaseQuantity()">+</button>
           <button onclick="decreaseQuantity()">-</button>
         </div>
       </div>
 
-      <div class="total-price-box">
-        <div class="total">
+      <div class="total-price-box3">
+        <div class="total3">
           <span>총 상품 금액</span>
         </div>
-        <div class="price">
-          <span id="total-price">${product.price}</span>원
+        <div class="price3">
+          <span id="total-price3">${product.price}</span>원
         </div>
       </div>
 
-      <a href="#" class="button cart-button">장바구니 담기</a>
-      <a href="#" class="button buy-button">구매하기</a>
+      <a href="#" class="button3 cart-button3">장바구니 담기</a>
+      <a href="#" class="button3 buy-button3">구매하기</a>
     </div>
   </div>
 </div>
-		
+
 	<%-- [Contents] ######################################################### --%>
 	
 	<jsp:include page="/layout/footer.jsp" />
