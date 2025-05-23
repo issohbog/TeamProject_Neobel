@@ -1,12 +1,10 @@
-/**
- * 
- */
+
 
 window.onload = function () {
   let quantity = 1;
-  const unitPrice = Number(document.getElementById('product').dataset.price);
-  const quantityDisplay = document.getElementById('quantity');
-  const totalPriceDisplay = document.getElementById('total-price');
+  const unitPrice = Number(document.getElementById('product3').dataset.price);
+  const quantityDisplay = document.getElementById('quantity3');
+  const totalPriceDisplay = document.getElementById('total-price3');
 
   function updateTotal() {
     totalPriceDisplay.textContent = (unitPrice * quantity).toLocaleString();

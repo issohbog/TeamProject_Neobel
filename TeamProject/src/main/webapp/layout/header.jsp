@@ -6,12 +6,12 @@
   
   <div class="menu">
      <div class="logo">
-    <a href="Main.HTML"><img src="<%= root %>/static/img/네오벨 로고.png" width="278" height="74" alt="NEOBEL 로고"></a>
+    <a href="index.jsp"><img src="<%= root %>/static/img/네오벨 로고.png" width="278" height="74" alt="NEOBEL 로고"></a>
   </div>
  
   <nav class="nav-menu">
-      <a href=""><span>PROMOTION</span></a>
-      <a href="productList.jsp"><span>PRODUCT</span></a>
+      <a href="${pageContext.request.contextPath}/product"><span>PROMOTION</span></a>
+      <a href="${pageContext.request.contextPath}/product"><span>PRODUCT</span></a>
       <a href="브랜드소개"><span>BRAND</span></a>
       <a href="공지사항"><span>ABOUT</span></a>
   </nav>
