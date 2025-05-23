@@ -10,7 +10,6 @@
 <%-- <link href="<%= root %>/static/css/style.css" rel="stylesheet" /> --%>
 <link href="<%= root %>/static/css/header.css" rel="stylesheet" />
 <link href="<%= root %>/static/css/index.css" rel="stylesheet" /> 
-<link href="<%= root %>/static/css/footer.css" rel="stylesheet" />  
+<link href="<%= root %>/static/css/footer.css" rel="stylesheet" />
 <link href="<%= root %>/static/css/productList.css" rel="stylesheet" />
-<link href="<%= root %>/static/css/productCard.css" rel="stylesheet" />    
-<c:set var="imgPath" value="${pageContext.request.contextPath}/static/img" />
+<link href="<%= root %>/static/css/productDetail.css" rel="stylesheet" />        

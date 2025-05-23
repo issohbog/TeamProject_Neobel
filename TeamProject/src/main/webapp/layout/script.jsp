@@ -7,3 +7,4 @@
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script> 
 <script src="<%= root %>/static/js/script.js"></script> 
 <script src="<%= root %>/static/js/Main.js"></script> 
+<script src="<%= root %>/static/js/productDetail.js"></script> 
