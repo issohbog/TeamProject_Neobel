@@ -1,7 +1,12 @@
 package Servlet;
 
 import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 import DAO.CartDAO;
 import DTO.Cart;
@@ -10,6 +15,7 @@ import Service.CartService;
 import Service.CartServiceImpl;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
+import jakarta.servlet.ServletInputStream;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
@@ -19,7 +25,7 @@ import jakarta.servlet.http.HttpSession;
 /**
  * Servlet implementation class CartServlet
  */
-@WebServlet("/cart")
+@WebServlet("/cart/*")
 public class CartServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
@@ -29,7 +35,8 @@ public class CartServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+	
+		
 		String page = "";
 		
 		response.getWriter().append("Served at: ").append(request.getContextPath());
@@ -81,10 +88,48 @@ public class CartServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+		
+		System.out.println("dopost 실행");
+
+		System.out.println("getServletPath = " + request.getServletPath());
+		System.out.println("getPathInfo = " + request.getPathInfo());
+		System.out.println("requestURI = " + request.getRequestURI());
+		System.out.println("requestURL = " + request.getRequestURL());
+		
+		request.setCharacterEncoding("UTF-8");
+		response.setContentType("application/json; charset=UTF-8");
+		
+		String path = request.getPathInfo();
 		
 		
-		doGet(request, response);
+		if("/updateQuantity".equals(path)) {
+			ServletInputStream sis = request.getInputStream();
+			ObjectMapper mapper = new ObjectMapper();
+			Map<String, Object> map = mapper.readValue(sis, new HashMap().getClass());
+		
+			
+			int cartNo = (Integer)(map.get("cartNo"));
+			int quantity = (Integer)(map.get("quantity"));
+			
+			Cart updateCart = new Cart();
+			updateCart.setCartNo(cartNo);
+			updateCart.setQuantity(quantity);
+
+			
+			System.out.println("cartNo: " + updateCart.getCartNo());
+			System.out.println("quantity: " + updateCart.getQuantity());
+			
+			
+			// 수량 업데이트 서비스 호출 
+			boolean result = cartService.updateQuantity(updateCart.getCartNo(), updateCart.getQuantity());
+			
+			String jsonString = mapper.writeValueAsString(updateCart);
+			PrintWriter writer = response.getWriter();
+			writer.println(jsonString);
+			
+		}
+		
+		
 	}
 
 
@@ -105,6 +150,31 @@ public class CartServlet extends HttpServlet {
 	protected void doDelete(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	    String cartNoParm = request.getParameter("cartNo");
 	    System.out.println("cartNoParm = " + cartNoParm);
+	    
+	    String path = request.getPathInfo(); 
+	    
+	    
+	    if ("/clear".equals(path)) {
+//			HttpSession session = request.getSession();
+//			User user = (User) session.getAttribute("loginUser");
+//			int userNo = user.getUserNo();
+			
+			// 사용자 고유번호를 임시로 1로 설정 
+			int userNo = 1;
+
+	        boolean result = cartService.clearCart(userNo);
+
+	        if (result) {
+	            response.setStatus(200);
+	            response.getWriter().print("SUCCESS");
+	        } else {
+	            response.setStatus(500);
+	            response.getWriter().print("FAIL");
+	        }
+	        return;
+	    }
+	    
+	    
 	    
 
 	    if (cartNoParm == null || cartNoParm.isEmpty()) {
@@ -160,6 +230,43 @@ public class CartServlet extends HttpServlet {
 	        }
 	    }
 	}
+
+//	@Override
+//	protected void doPut(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+//		System.out.println("doput 실행");
+//
+//		System.out.println("getServletPath = " + request.getServletPath());
+//		System.out.println("getPathInfo = " + request.getPathInfo());
+//		System.out.println("requestURI = " + request.getRequestURI());
+//		System.out.println("requestURL = " + request.getRequestURL());
+//		
+//		request.setCharacterEncoding("UTF-8");
+//		response.setContentType("application/json; charset=UTF-8");
+//		
+//		String path = request.getPathInfo();
+//		
+//		
+//		if("/updateQuantity".equals(path)) {
+//			ServletInputStream sis = request.getInputStream();
+//			ObjectMapper mapper = new ObjectMapper();
+//			Cart cart = mapper.readValue(sis, Cart.class);
+//			
+//			System.out.println("cartNo: " + cart.getCartNo());
+//			System.out.println("quantity: " + cart.getQuantity());
+//		}
+//		
+//	}
+
+	@Override
+	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		  System.out.println("🔥 service() 실행 - method: " + request.getMethod());
+		super.service(request, response);
+	}
+	
+	
+	
+	
+
 	
 	
 

@@ -41,8 +41,7 @@
 					<c:forEach var="cart" items="${cartList}" varStatus="status">	
 						<tr>
 							<td><input type="checkbox" /></td>
-							<td class="cart-product-info"><img src="${pageContext.request.contextPath}/static/img/hyaluronpad.jpg"
-								alt="product" />
+							<td class="cart-product-info"><img src="${pageContext.request.contextPath}/static/${cart.product.imagePath}" alt="product" />
 								<div>
 									<span>${cart.product.productName}</span> 
 								</div>
@@ -56,11 +55,11 @@
 									<input id="quantity_num_${status.index}" name="quantity_num_name" type="text"	class="quantity-input" value="${cart.quantity}" min="1">
 									<div class="quantity-button">
 										<a href="javascript:;" class="up"
-											onclick="Basket.addQuantityShortcut('quantity_num_${status.index}', ${status.index}, ${cart.cartNo});">
+											onclick="Basket.addQuantityShortcut('${root}','quantity_num_${status.index}', ${status.index}, ${cart.cartNo});">
 											<img src="${pageContext.request.contextPath}/static/img/btn_quantity_up.gif" alt="수량증가">
 										</a> 
 										<a href="javascript:;" class="down"
-											onclick="Basket.outQuantityShortcut('quantity_num_${status.index}', ${status.index}, ${cart.cartNo});">
+											onclick="Basket.outQuantityShortcut('${root}','quantity_num_${status.index}', ${status.index}, ${cart.cartNo});">
 											<img src="${pageContext.request.contextPath}/static/img/btn_quantity_down.gif" alt="수량감소">
 										</a>
 									</div>
@@ -76,7 +75,8 @@
 			</table>
 
 			<div class="cart-delete">
-				<a href="javascript:void(0)" onclick="removeSelected()">선택삭제</a> <a href="">장바구니 비우기</a>
+				<a href="javascript:void(0)" onclick="removeSelected()">선택삭제</a> 
+				<a href="javascript:void(0)" onclick="clearCart()">장바구니 비우기</a>
 			</div>
 
 			<div class="cart-summary">
@@ -84,7 +84,9 @@
 			</div>
 		</div>
 		<div class="cart-footer">
-			<button class="buy-btn">구매하기</button>
+			<form action="${root}/order" method="get">
+				<button type="submit" class="buy-btn">구매하기</button>
+			</form>
 		</div>
 	</div>
 
@@ -155,10 +157,41 @@
 		        }
 		    });
 		}
+		
+		// 장바구니 전체 삭제 
+		function clearCart() {
+			const root = "${root}";
+			
+			const url = root + "/cart/clear";
+			
+		  if (!confirm("정말로 장바구니를 모두 비우시겠습니까?")) return;
+		
+		  fetch(url, {
+		    method: "DELETE"
+		  })
+		  .then(response => {
+		    if (!response.ok) throw new Error("서버 오류");
+		    return response.text();
+		  })
+		  .then(result => {
+		    if (result === "SUCCESS") {
+		      alert("장바구니가 모두 비워졌습니다.");
+		      location.reload(); // 화면 새로고침
+		    } else {
+		      alert("장바구니 비우기에 실패했습니다.");
+		    }
+		  })
+		  .catch(err => {
+		    console.error(err);
+		    alert("서버 통신 중 오류가 발생했습니다.");
+		  });
+		}
 
 		
 	
 	</script>
+	
+	
 </body>
 </html>
 
