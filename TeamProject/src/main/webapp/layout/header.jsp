@@ -6,7 +6,7 @@
   
   <div class="menu">
      <div class="logo">
-    <a href="index.jsp"><img src="<%= root %>/static/img/네오벨 로고.png" width="278" height="74" alt="NEOBEL 로고"></a>
+    <a href="${pageContext.request.contextPath}/index.jsp"><img src="<%= root %>/static/img/네오벨 로고.png" width="278" height="74" alt="NEOBEL 로고"></a>
   </div>
  
   <nav class="nav-menu">
@@ -26,7 +26,7 @@
          </ul>
       </li>
 
-      <li><a href="#"><span class="material-symbols-outlined">local_mall</span></a></li>
+      <li><a href="${pageContext.request.contextPath}/page/cart/cart.jsp"><span class="material-symbols-outlined">local_mall</span></a></li>
       <li><a href="#"><span class="material-symbols-outlined">help</span></a></li>
     </ul>
 

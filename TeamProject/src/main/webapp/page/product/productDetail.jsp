@@ -52,8 +52,8 @@
         </div>
       </div>
 
-      <a href="#" class="button3 cart-button3">장바구니 담기</a>
-      <a href="#" class="button3 buy-button3">구매하기</a>
+      <a href="${pageContext.request.contextPath}/page/cart/cart.jsp" class="button3 cart-button3">장바구니 담기</a>
+      <a href="${pageContext.request.contextPath}/page/order/orderForm.jsp" class="button3 buy-button3">구매하기</a>
     </div>
   </div>
 </div>
