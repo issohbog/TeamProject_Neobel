@@ -1,13 +1,12 @@
 package Servlet;
 
 import java.io.IOException;
-import java.util.List;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import DAO.OrderDAO;
 import DAO.OrderDetailDAO;
 import DTO.Order;
-import DTO.OrderDetail;
-import DTO.Product;
 import Service.OrderDetailService;
 import Service.OrderDetailServiceImpl;
 import Service.OrderService;
@@ -37,25 +36,30 @@ public class OrderResultServlet extends HttpServlet {
 			
 			// 2. Order 정보 조회 
 			Order order = orderService.getOrderByOrderNo(orderNo);		// detailList, product까지 포함 
+			System.out.println(orderNo);
 			
 			if (order != null) {
-			    System.out.println("====== 주문 정보 ======");
-			    System.out.println("주문 번호: " + order.getOrderNo());
-			    System.out.println("총 결제 금액: " + order.getTotalPrice());
-			    System.out.println("받는 분: " + order.getName());
-
-			    System.out.println("====== 주문 상세 ======");
-			    for (OrderDetail detail : order.getDetailList()) {
-			        Product product = detail.getProduct();
-			        System.out.println("상품명: " + product.getProductName());
-			        System.out.println("상품 가격: " + product.getPrice());
-			        System.out.println("수량: " + detail.getQuantity());
-			        System.out.println("소계: " + detail.getPrice());
-			        System.out.println("-------------------------");
-			    }
-			 
-			
-			
+//			    System.out.println("====== 주문 정보 ======");
+//			    System.out.println("주문 번호: " + order.getOrderNo());
+//			    System.out.println("총 결제 금액: " + order.getTotalPrice());
+//			    System.out.println("받는 분: " + order.getName());
+//
+//			    System.out.println("====== 주문 상세 ======");
+//			    for (OrderDetail detail : order.getDetailList()) {
+//			        Product product = detail.getProduct();
+//			        System.out.println("상품명: " + product.getProductName());
+//			        System.out.println("상품 가격: " + product.getPrice());
+//			        System.out.println("수량: " + detail.getQuantity());
+//			        System.out.println("소계: " + detail.getPrice());
+//			        System.out.println("-------------------------");
+//			    }
+				
+				// 주문 코드 생성 
+//				String today = new SimpleDateFormat("yyyyMMdd").format(new Date()); 
+//				String orderCode = today + "-" + String.format("%06d", order.getOrderNo());
+				
+				// 주문 객체에 세팅 
+//				order.setOrderCode(orderCode);
 				
 				request.setAttribute("order", order);
 				request.setAttribute("showModal", true);

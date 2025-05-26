@@ -25,7 +25,7 @@ public class OrderServiceImpl extends BaseServiceImpl<OrderDAO, Order> implement
 	public int insert(Order order) {
 		
 		int result = 0; 
-		
+		 
 		try {
 			result = dao.insert(order);
 		} catch (Exception e) {
