@@ -101,20 +101,20 @@
 
   <!-- 주문 완료 modal -->
    <!-- 주문 페이지 내에 이 모달을 미리 삽입해두기 -->
-  <div class="modal" id="order-complete-modal">
+<%--   <div class="modal" id="order-complete-modal">
     <div class="order-popup">
       <div class="order-complete-title"><span>주문완료</span></div>
         <div class="container">
           <img src="${pageContext.request.contextPath}/static/img/12083665_Wavy_Bus-30_Single-08 1.png" alt="주문 완료 이미지" class="popup-img" />
             <p class="popup-message">주문이 완료되었습니다.</p>
-            <p class="popup-order-num"><span>주문번호 : </span><span>25125132-165496431</span></p>
+            <p class="popup-order-num"><span>주문번호 : </span><span id="order-number"></span></p>
             <div class="popup-buttons">
-              <button class="btn primary">주문상세확인</button>
+              <button class="btn primary" onclick="location.href='${pageContext.request.contextPath}/order/history.jsp'">주문상세확인</button>
               <button class="btn secondary" onclick="closeModal()">쇼핑계속하기</button>
             </div>
         </div>
       </div>
-  </div>	
+  </div>	 --%>
 	
 	
 	<%-- [Contents] ######################################################### --%>

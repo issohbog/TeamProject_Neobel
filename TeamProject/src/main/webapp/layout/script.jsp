@@ -12,4 +12,5 @@
 
 <script src="<%= root %>/static/js/cart.js" defer></script> 
 <script src="<%= root %>/static/js/orderFrom.js"></script> 
+<script src="<%= root %>/static/js/orderResult.js"></script> 
 
