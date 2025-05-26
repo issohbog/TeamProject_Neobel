@@ -87,7 +87,6 @@ public class OrderServlet extends HttpServlet {
 		
 		
 		User user = userService.selectbyUserNo(userNo);
-
 		
 		System.out.println("user = " + user);
 		

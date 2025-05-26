@@ -34,6 +34,7 @@ public class Order {
 	private String phone;			// 전화번호
 	private String req; 			// 배송요청사항  
 	
+	
     @Column(exist = false)
 	User user;						// 주문한 회원 정보 (join용)
     
