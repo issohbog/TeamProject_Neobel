@@ -1,6 +1,7 @@
 package DTO;
 
 import java.util.Date;
+import java.util.List;
 
 import com.alohaclass.jdbc.annotation.Column;
 import com.alohaclass.jdbc.annotation.Pk;
@@ -30,8 +31,13 @@ public class Order {
 	private String postCode;		// 우편 번호
 	private String addr; 			// 주소
 	private String addrDetail;		// 상세 주소  
+	private String phone;			// 전화번호
 	private String req; 			// 배송요청사항  
 	
     @Column(exist = false)
 	User user;						// 주문한 회원 정보 (join용)
+    
+    private List<OrderDetail> detailList;	// 한 주문 내 각 상품 상세정보 
+    
+    
 }

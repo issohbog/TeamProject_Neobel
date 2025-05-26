@@ -27,7 +27,7 @@
   <h2>BEST</h2>
   <div class="scroll-container" id="slider">
 
-   <a href="${ root }/product?productNo=${product.productNo}" class="product-card">
+   <a href="" class="product-card">
   
       <img src="${pageContext.request.contextPath}/static/img/어성초 흔적 에센스 패드.jpg" alt="Product 1">
       <div class="product-info">
@@ -118,6 +118,8 @@
 <section class="banner2">
   <h1>ALL PRODUCT</h1>
 </section>
+	
+
 	
 	
 	<%-- [Contents] ######################################################### --%>

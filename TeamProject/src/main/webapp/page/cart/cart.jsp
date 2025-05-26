@@ -84,7 +84,7 @@
 			</div>
 		</div>
 		<div class="cart-footer">
-			<form action="${root}/order" method="get">
+			<form action="${root}/order/" method="get">
 				<button type="submit" class="buy-btn">구매하기</button>
 			</form>
 		</div>

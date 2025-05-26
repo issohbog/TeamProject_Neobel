@@ -19,20 +19,15 @@ public class UserServiceImpl extends BaseServiceImpl<UserDAO, User> implements  
 		Map<String , Object> map = new HashMap<>();
 		map.put("userNo", userNo);
 
-		List<User> list = null;
+		User user = null;
 		
 		try {
-			 list = dao.listBy(map);
-			 
-			 if(list != null && !list.isEmpty()) {
-				 return list.get(0);				 
-			 }
-			 
+			user = dao.select( userNo );			 
 			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		return null;
+		return user;
 		
 	}
 	

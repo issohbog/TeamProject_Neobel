@@ -8,8 +8,12 @@ import DTO.OrderDetail;
 public interface OrderService extends BaseService<Order> {
 	
 	// 주문 생성 
-	//int insertOrder(Order order);
+	public int insert(Order order);
+	
+	// 주문 생성 - AUTO_INCREMENT 로 생성된 PK 가져옴
+	public Order insertKey(Order order);
 	
 	// 주문 상세 생성 
+	public Order getOrderByOrderNo(int orderNo);
 	
 }

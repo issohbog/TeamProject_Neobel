@@ -21,10 +21,16 @@ public class CartServiceImpl extends BaseServiceImpl<CartDAO, Cart> implements C
 
 	@Override
 	public List<Cart> listByUserNo(int userNo) {
+		// userNo 를 조건으로 전달하기 위한 파라미터 맵을 생성 
 		Map<String, Object> map = new HashMap<String, Object>();
+		
+		// DAO에서 이 맵을 이용해 SQL에서 WHERE user_no = ?와 같은 조건으로 사용된다. 
 		map.put("userNo", userNo);
+		
+		// 기본 dao에 있는 listBy() 메서드를 사용해서, userNo 조건에 맞는 장바구니 목록 조회
 		List<Cart> list = null;
 		try {
+			
 			list = dao.listBy(map);
 
 			// ★★★ cart join product 
