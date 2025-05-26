@@ -19,7 +19,7 @@
     </div>
 
     <div class="product-options3">
-      <div class="product-name3">${product.productName} 상품명</div>
+      <div class="product-name3">${product.productName}</div>
       <div class="product-volume3">
         <c:choose>
           <c:when test="${empty product.description}">
