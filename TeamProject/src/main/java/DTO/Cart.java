@@ -20,9 +20,9 @@ public class Cart {
     private Integer userNo;       // 회원 고유번호
     private Integer productNo;    // 상품 고유번호
     private Integer quantity;     // 상품 수량
-    
+     
     @Column(exist = false)
     User user;
     @Column(exist = false)
     Product product;
-}
+} 

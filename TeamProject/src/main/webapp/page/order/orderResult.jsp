@@ -12,7 +12,100 @@
 <body>
 	<jsp:include page="/layout/header.jsp" />
 	<%-- [Contents] ######################################################### --%>
-		
+	<!-- 1400px 선 영역 -->
+  <div class="order-result-line">Order result.</div>
+  <div class="container">
+    <h2>ORDER RESULT</h2>
+    <table class="info-table">
+      <tr>
+        <th>주문번호</th>
+        <td>20250919-0000278</td>
+      </tr>
+      <tr>
+        <th>주문일자</th>
+        <td>2025-09-19 11:17:16</td>
+      </tr>
+    </table>
+
+    <h2>PAYMENT INFORMATION</h2>
+    <table class="info-table">
+      <tr>
+        <th>최종결제금액</th>
+        <td>5,400</td>
+      </tr>
+      <tr>
+        <th>결제수단</th>
+        <td>
+          무통장 입금<br>
+          입금자 : 김조은<br>
+          계좌번호 : 하나은행 183-310033-77004 (주)로컴퍼니
+        </td>
+      </tr>
+    </table>
+
+    <h2>ORDER INFORMATION</h2>
+    <table class="product-table">
+      <thead>
+        <tr>
+          <th>PRODUCT</th>
+          <th>PRICE</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>약산성 시트 마스크 여성초 핏</td>
+          <td>16,800</td>
+        </tr>
+        <tr>
+          <td>수분초 히알루론 패드<br>하이드레이팅 터치</td>
+          <td>16,800</td>
+        </tr>
+        <tr>
+          <td>깜딱지 시트 마스크 여성초 스티커</td>
+          <td>2,400</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>TOTAL ORDER DETAIL</h2>
+    <table class="info-table">
+      <tr>
+        <th>총 주문 금액</th>
+        <td>36,000</td>
+      </tr>
+    </table>
+
+    <h2>DELEVERY INFORMATION</h2>
+    <table class="info-table">
+      <tr>
+        <th>받으시는 분</th>
+        <td>김조은</td>
+      </tr>
+      <tr>
+        <th>우편번호</th>
+        <td>12345</td>
+      </tr>
+      <tr>
+        <th>주소</th>
+        <td>인천광역시 부평구 부평1동 534-48</td>
+      </tr>
+      <tr>
+        <th>휴대전화</th>
+        <td>010-0000-1111</td>
+      </tr>
+      <tr>
+        <th>배송메시지</th>
+        <td>문앞에 두고 벨 눌러주세요</td>
+      </tr>
+    </table>
+
+    <div class="orderList">
+        <input type="button" class="btn white" value="주문 목록" >
+    </div>
+
+  </div>
+
+</div>	
 	
 	
 	<%-- [Contents] ######################################################### --%>
