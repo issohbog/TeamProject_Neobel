@@ -84,7 +84,7 @@
 			</div>
 		</div>
 		<div class="cart-footer">
-			<button class="buy-btn">구매하기</button>
+			<a href ="${pageContext.request.contextPath}/page/order/orderForm.jsp"><button class="buy-btn">구매하기</button></a>
 		</div>
 	</div>
 
