@@ -114,6 +114,14 @@ body {
   border: 1px solid #333;
   padding: 5px 10px;
   cursor: pointer;
+  transition: all 0.4s ease-in-out;
+}
+
+.delete-btn:hover {
+	background: #8E8C8C;
+    color: white;
+    border: 0;
+
 }
 
 .cart-summary {
@@ -130,7 +138,14 @@ body {
 }
 
 .cart-delete a {
-    color: black;
+    color: black; 
+    text-decoration: underline;
+      transition: all 0.4s;
+    
+}
+
+.cart-delete a:hover {
+	color: #8E8C8C;
 }
 
 .cart-footer {
@@ -146,5 +161,21 @@ body {
   font-size: 16px;
   width: 600px;
   height: 60px;
+}
+
+
+/* 시간차 로딩 */
+.spinner {
+  border: 6px solid #f3f3f3;
+  border-top: 6px solid #007bff;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0%   { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
 

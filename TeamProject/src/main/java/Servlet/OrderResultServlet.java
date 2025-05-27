@@ -39,32 +39,19 @@ public class OrderResultServlet extends HttpServlet {
 			System.out.println(orderNo);
 			
 			if (order != null) {
-//			    System.out.println("====== 주문 정보 ======");
-//			    System.out.println("주문 번호: " + order.getOrderNo());
-//			    System.out.println("총 결제 금액: " + order.getTotalPrice());
-//			    System.out.println("받는 분: " + order.getName());
-//
-//			    System.out.println("====== 주문 상세 ======");
-//			    for (OrderDetail detail : order.getDetailList()) {
-//			        Product product = detail.getProduct();
-//			        System.out.println("상품명: " + product.getProductName());
-//			        System.out.println("상품 가격: " + product.getPrice());
-//			        System.out.println("수량: " + detail.getQuantity());
-//			        System.out.println("소계: " + detail.getPrice());
-//			        System.out.println("-------------------------");
-//			    }
-				
-				// 주문 코드 생성 
-//				String today = new SimpleDateFormat("yyyyMMdd").format(new Date()); 
-//				String orderCode = today + "-" + String.format("%06d", order.getOrderNo());
-				
-				// 주문 객체에 세팅 
-//				order.setOrderCode(orderCode);
+
 				
 				request.setAttribute("order", order);
-				request.setAttribute("showModal", true);
+				
+				
+				// 주문완료 직후인 경우에만 true로 설정
+				String show = request.getParameter("showModal");
+				if ("true".equals(show)) {
+					request.setAttribute("showModal", true);
+				}
 				
 				// 5. 주문 결과 화면으로 포워딩 
+//				response.sendRedirect(request.getContextPath() + "/order/result?orderNo=" + orderNo + "&showModal=true");
 				request.getRequestDispatcher("/page/order/orderResult.jsp").forward(request, response);
 			} else {
 				// 주문이 존재하지 않으면 실패 처리 

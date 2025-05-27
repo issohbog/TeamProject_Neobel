@@ -15,55 +15,42 @@
 	<section class="order-history">
     <h1>주문 내역</h1>
     <hr class="section-line" />
-    
-    <table class="order-table">
-      <thead>
-        <tr>
-          <th>DATE</th>
-          <th>ORDER #</th>
-          <th>PRODUCT</th>
-          <th>PRICE</th>
-          <th>PAYMENT</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>2025-05-19</td>
-          <td>20250519-0000278</td>
-          <td class="orderHistory-product-info">
-            <div>
-                <span>수분초 힐링토너 패드 하이드로데일리 토너</span>
-            </div>
-          </td>
-          <td>4,000</td>
-          <td>신용카드</td>
-        </tr>
-        <tr>
-          <td>2025-05-20</td>
-          <td>20250520-0000256</td>
-          <td class="orderHistory-product-info">
-            <div>
-                <span>어성초 혼합 에센스 패드 클리어 터치 외 2개</span>
-            </div>
-          </td>
-          <td>50,230</td>
-          <td>무통장입금</td>
-        </tr>
-        <tr>
-          <td>2025-05-25</td>
-          <td>20250519-0000278</td>
-          <td class="orderHistory-product-info">
-            <div>
-                <span>모델링 크림 마스크 부활초 쇼크</span>
-            </div>
-          </td>
+	<table class="order-table">
+		<thead>
+			<tr>
+				<th>DATE</th>
+				<th>ORDER #</th>
+				<th>PRODUCT</th>
+				<th>PRICE</th>
+				<th>PAYMENT</th>
+			</tr>
+		</thead>
 
-          <td>5,600</td>
-          <td>신용카드</td>
-        </tr>
-      </tbody>
-    </table>
-  </section>	
+		<tbody>
+			<c:forEach var="order" items="${orders}">
+				<tr>
+					<td><fmt:formatDate value="${order.orderDate}" pattern="yyyy-MM-dd" /></td>
+					
+					<td class="orderHistory-order-code">
+						<div>
+						    <a href="${pageContext.request.contextPath}/order/result?orderNo=${order.orderNo}">
+						      <span>${order.orderCode}</span>
+   							</a>
+						</div>
+					</td>
+					<td class="orderHistory-product-info">
+						<div>
+						      <span>${order.orderTitle}</span>
+						</div>
+					</td>
+					<td><fmt:formatNumber value="${order.totalPrice}" type="number" /></td>
+					<td>${order.payment}</td>
+				</tr>
+				<tr>
+			</c:forEach>
+		</tbody>
+	</table>
+	</section>	
 	
 	
 	<%-- [Contents] ######################################################### --%>

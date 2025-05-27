@@ -1,6 +1,8 @@
 package Servlet;
 
 import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 import DAO.CartDAO;
@@ -50,7 +52,7 @@ public class OrderServlet extends HttpServlet {
 		
 		CartService cartService = new CartServiceImpl(cartDao);
 		
-		List<Cart> cartList = cartService.listByUserNo(userNo);
+		List<Cart> cartList = cartService.listByUserNo(userNo);	
 		for(Cart cart : cartList) {
 			System.out.println(cart);
 			System.out.println(cart.getProduct());
@@ -111,9 +113,21 @@ public class OrderServlet extends HttpServlet {
 		// insertKey는 insert후 auto_increment 된 orderNo까지 포함시켜 Order객체로 반환해줄 수 있다. 
 		Order orderResult = orderService.insertKey(order);
 		System.out.println(orderResult.getOrderNo());
+		
+		// 4-1. 주문코드 생성 (yyyyMMdd-000001 형식)
+		String today = new SimpleDateFormat("yyyyMMdd").format(new Date());
+		String orderCode = today + "-" + String.format("%07d", orderResult.getOrderNo());
+
+		// 4-2. 주문 객체에 세팅
+		orderResult.setOrderCode(orderCode);
+		
+		// 4-3. DB에 order_code 업데이트
+		orderService.updateOrderCode(orderResult); // update 문 실행
  
 		if( orderResult != null ) {
 			System.out.println("주문 성공 : " + orderResult.getOrderNo());
+			
+			System.out.println("order 객체의 주문코드 " + orderResult.getOrderCode());
 			
 			// 5. 장바구니 목록 조회 
 			CartService cartService = new CartServiceImpl(new CartDAO());
@@ -142,7 +156,7 @@ public class OrderServlet extends HttpServlet {
 			
 			// 8. 주문 완료 페이지로 이동
 			// 리다이렉트 방식 
-			response.sendRedirect(request.getContextPath() + "/order/result?orderNo=" + orderResult.getOrderNo());
+			response.sendRedirect(request.getContextPath() + "/order/result?orderNo=" + orderResult.getOrderNo() + "&showModal=true"  );
 			return;
 			
 		} 

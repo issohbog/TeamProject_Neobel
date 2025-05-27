@@ -19,7 +19,7 @@
     <table class="info-table">
       <tr>
         <th>주문번호</th>
-        <td>${order.orderDate}</td>
+        <td>${order.orderCode}</td>
       </tr>
       <tr>
         <th>주문일자</th>
@@ -99,7 +99,7 @@
     </table>
 
     <div class="orderList">
-        <input type="button" class="btn white" value="주문 목록" >
+        <input type="button" class="btn white" id="buy-btn" value="주문 목록"  onclick="location.href='${pageContext.request.contextPath}/order/history'" >
     </div>
 
   </div>
@@ -112,7 +112,7 @@
         <div class="modal-container">
           <img src="${pageContext.request.contextPath}/static/img/12083665_Wavy_Bus-30_Single-08 1.png" alt="주문 완료 이미지" class="popup-img" />
             <p class="popup-message">주문이 완료되었습니다.</p>
-            <p class="popup-order-num"><span>주문번호 : </span><span id="order-number"></span></p>
+            <p class="popup-order-num"><span>주문번호 : </span><span id="order-number">${order.orderCode}</span></p>
             <div class="popup-buttons">
               <button class="btn primary" onclick="closeModal()">주문상세확인</button>
               <button class="btn secondary" onclick="location.href='${pageContext.request.contextPath}/product'">쇼핑계속하기</button>
@@ -122,14 +122,24 @@
   </div>
 
 
+	<div id="loading-overlay"
+		style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(255, 255, 255, 0.8); z-index: 9999; justify-content: center; align-items: center;">
+		<div class="spinner"></div>
+	</div>
+
 	<%-- [Contents] ######################################################### --%>
 	<jsp:include page="/layout/footer.jsp" />
 	<jsp:include page="/layout/script.jsp" />
 	
-<%-- 	<c:if test="${showModal}"> --%>
+	<c:if test="${showModal}">
 		<script>
 			window.addEventListener("DOMContentLoaded", openModal);
+			
+			
+			
 		</script>
-<%-- 	</c:if> --%>
+	</c:if>
+	
+		<script src="<%= root %>/static/js/orderForm.js"></script> 
 </body>
 </html>
