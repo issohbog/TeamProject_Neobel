@@ -12,5 +12,7 @@ public class CartDAO extends BaseDAOImpl<Cart> {
 		return super.delete(pk);
 	}
 	 
+	
+
 } 
  

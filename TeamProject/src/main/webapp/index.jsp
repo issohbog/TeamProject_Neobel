@@ -25,6 +25,7 @@
 <!-- BEST SECTION -->
 <section class="best-section">
   <h2>BEST</h2>
+  
   <div class="scroll-container" id="slider">
 
    <a href="${ root }/product?productNo=${product.productNo}" class="product-card">

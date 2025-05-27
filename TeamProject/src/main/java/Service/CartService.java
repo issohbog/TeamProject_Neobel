@@ -11,5 +11,7 @@ public interface CartService extends BaseService<Cart> {
 
 	// 장바구니 단일 항목 삭제 
 	public boolean remove(int cartNo);
+
+	public boolean insert(Cart cart);
 	
 }

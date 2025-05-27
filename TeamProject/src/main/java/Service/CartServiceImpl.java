@@ -41,17 +41,32 @@ public class CartServiceImpl extends BaseServiceImpl<CartDAO, Cart> implements C
 		return list;
 	}
 
-	@Override
-	public boolean remove(int cartNo) {
-		int result = 0;
-		try {
-			result = cartDAO.delete(cartNo);
 			
-		} catch (Exception e) {
-			// TODO: handle exception
-		}
-		return result > 0;
+	
+	
+	@Override
+	public boolean insert(Cart cart) {
+	    try {
+	        int result = dao.insert(cart);  // CartDAO에 있는 insert 사용
+	        return result > 0;
+	    } catch (Exception e) {
+	        e.printStackTrace();
+	        return false;
+	    }
 	}
 
-	 
+
+	@Override
+	public boolean remove(int cartNo) {
+	    try {
+	        int result = dao.delete((long) cartNo);
+	        return result > 0;
+	    } catch (Exception e) {
+	        e.printStackTrace();
+	        return false;
+	    }
+	}
+
+
+	
 }

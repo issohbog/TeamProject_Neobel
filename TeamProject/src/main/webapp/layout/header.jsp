@@ -12,7 +12,7 @@
   <nav class="nav-menu">
       <a href="${ root }/product?productNo=${product.productNo}"><span>PROMOTION</span></a>
       <a href="${ root }/product?productNo=${product.productNo}"><span>PRODUCT</span></a>
-      <a href="브랜드소개"><span>BRAND</span></a>
+      <a href="${pageContext.request.contextPath}/page/Brand/brand.jsp"><span>BRAND</span></a>
       <a href="공지사항"><span>ABOUT</span></a>
   </nav>
 <ul class="icons">
