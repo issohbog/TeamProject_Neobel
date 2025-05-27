@@ -24,8 +24,10 @@
 <link href="<%= root %>/static/css/orderForm.css" rel="stylesheet" /> 
 <link href="<%= root %>/static/css/orderHistory.css" rel="stylesheet" /> 
 
-<link href="<%= root %>/static/css/brand.css" rel="stylesheet" />   
+<link href="<%= root %>/static/css/NoticeDetail.css" rel="stylesheet" />
 
+<link href="<%= root %>/static/css/brand.css" rel="stylesheet" />   
+<link href="<%= root %>/static/css/noticeList.css" rel="stylesheet" />
 <link href="<%= root %>/static/css/orderResult.css" rel="stylesheet" /> 
    
 
