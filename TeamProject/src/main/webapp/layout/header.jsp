@@ -6,7 +6,7 @@
   
   <div class="menu">
      <div class="logo">
-    <a href="${pageContext.request.contextPath}/index.jsp"><img src="<%= root %>/static/img/네오벨 로고.png" width="278" height="74" alt="NEOBEL 로고"></a>
+    <a href="Main.HTML"><img src="<%= root %>/static/img/네오벨 로고.png" width="278" height="74" alt="NEOBEL 로고"></a>
   </div>
  
   <nav class="nav-menu">

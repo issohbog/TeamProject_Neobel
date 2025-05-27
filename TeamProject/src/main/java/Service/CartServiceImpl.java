@@ -1,24 +1,17 @@
 package Service;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import com.alohaclass.test.Service.BoardService;
 
 import DAO.CartDAO;
-import DAO.ProductDAO;
 import DTO.Cart;
-import DTO.Product;
 
 public class CartServiceImpl extends BaseServiceImpl<CartDAO, Cart> implements CartService {
 
-	ProductDAO productDAO = new ProductDAO();
-	
-	CartDAO cartDAO = new CartDAO();
-	
 	public CartServiceImpl(CartDAO dao) {
 		super(dao);
 	}
 
+<<<<<<< HEAD
 	@Override
 	public List<Cart> listByUserNo(int userNo) {
 		// userNo 를 조건으로 전달하기 위한 파라미터 맵을 생성 
@@ -127,17 +120,7 @@ public class CartServiceImpl extends BaseServiceImpl<CartDAO, Cart> implements C
 	
 	
 
+=======
+>>>>>>> refs/heads/Hong
 	 
-
 }
-
-
-
-
-
-
-
-
-
-
-

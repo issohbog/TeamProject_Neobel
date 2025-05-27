@@ -1,93 +1,42 @@
 package Servlet;
 
 import java.io.IOException;
-import java.io.PrintWriter;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
-
-import com.fasterxml.jackson.databind.ObjectMapper;
 
 import DAO.CartDAO;
 import DTO.Cart;
-import DTO.User;
 import Service.CartService;
 import Service.CartServiceImpl;
-import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
-import jakarta.servlet.ServletInputStream;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import jakarta.servlet.http.HttpSession;
 
 /**
  * Servlet implementation class CartServlet
  */
-@WebServlet("/cart/*")
+@WebServlet("/Cart")
 public class CartServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	
-	private CartService cartService = new CartServiceImpl(new CartDAO());
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	
-		
-		String page = "";
-		
+		// TODO Auto-generated method stub
 		response.getWriter().append("Served at: ").append(request.getContextPath());
-		
-//		HttpSession session = request.getSession();
-//		User user = (User) session.getAttribute("loginUser");
-//		int userNo = user.getUserNo();
-		
-		// 사용자 고유번호를 임시로 1로 설정 
-		int userNo = 1;
-		
-		// CartDAO 객체를 생성, db와 연결하여 Cart 관련 쿼리 실행하는 역할(장바구니 목록조회/항목 추가/삭제) 
 		CartDAO cartDao = new CartDAO();
-		
-		// 비지니스 로직을 담당하는 CartService 인터페이스의 구현체를 생성
-		// 이 구현체에 방금 만든 cartDao 전달 -> 추후 Service가 Dao를 이용해서 실제 db작업 수행
 		CartService cartService = new CartServiceImpl(cartDao);
-		
-		// cartService는 특정 유저번호(userNo)에 해당하는 장바구니 목록 조회
-		// 내부적으로 DAO의 listBy()메서드를 호출하고 조회된 결과를 List<Cart>로 반환 
-		List<Cart> cartList = cartService.listByUserNo(userNo);
+		List<Cart> cartList =  cartService.list();
 		for (Cart cart : cartList) {
 			System.out.println(cart);
-			System.out.println(cart.getProduct());
 		}
-		
-		// jsp에서 사용할 수 있도록 request에 데이터 저장 
-		request.setAttribute("cartList", cartList);
-		
-		page = "/page/cart/cart.jsp";
-		
-		
-		// jsp로 포워딩
-		RequestDispatcher dispatcher = request.getRequestDispatcher(page);
-		dispatcher.forward(request, response);
-		
-		
-		
-		// TOOD: 나중에 지우기, 장바구니 전체 목록 테스트였음
-//		CartDAO cartDao = new CartDAO();
-//		CartService cartService = new CartServiceImpl(cartDao);
-//		List<Cart> cartList =  cartService.list();
-//		for (Cart cart : cartList) {
-//			System.out.println(cart);
-//		}
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
-
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		System.out.println("dopost 실행");
@@ -322,16 +271,3 @@ public class CartServlet extends HttpServlet {
 	
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-

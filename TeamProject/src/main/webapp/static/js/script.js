@@ -2,11 +2,33 @@
  *  javascript - script.js
  */
 
+ 	function sendCheckValue() {
+ 		var openJoinform = opener.document.joinForm;
+		
+ 		if (document.checkIdForm.chResult.value=="N") {
+ 			alert("다른 아이디를 입력해주세요.");
+			openJoinform.id.focus();
+			
+ 			window.close();
+		}else {
+			// 중복체크 결과인 idCheck 값을 전달
+			openJoinform.idDuplication.value="idCheck";
+			openJoinform.dbCheckId.disabled=true;
+			openJoinform.dbCheckId.style.opacity=0.6;
+			openJoinform.dbCheckId.style.cursor="default";
+			window.close();
+	}
+	
+}
+
+
 
 /**
  *  회원 가입 - 유효성 검사
  */
 async function checkUser() {
+	let isDuplicated = await idCheck();
+
 	let form = document.joinForm
 	// 아이디 중복 확인
 	let idDuplicated = await idCheck()
@@ -78,8 +100,8 @@ function check(regExp, element, msg) {
 
 // 아이디 중복 확인
 function idCheck() {
-	let username = document.getElementById('username').value
-    let url = `/Board/users/idCheck`
+	let username = document.getElementById('userId').value
+	let url = `/checkDuplicateId?username=${encodeURIComponent(username)}`
     
     let data = {
 		'username' : username,

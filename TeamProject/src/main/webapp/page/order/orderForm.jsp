@@ -12,12 +12,8 @@
 <body>
 	<jsp:include page="/layout/header.jsp" />
 	<%-- [Contents] ######################################################### --%>
-	<form action="${root}/order/" method="post">
-		<div class="payment-container">
-			
-		    <!-- 제목 -->
-		    <h1 class="payment-title">Order form.</h1>
 		
+<<<<<<< HEAD
 		    <!-- 주문 리뷰 테이블 -->
 		    <section class="order-review">
 		      <h2>ORDER REVIEW</h2>
@@ -121,11 +117,12 @@
         </div>
       </div>
   </div>	 --%>
+=======
+>>>>>>> refs/heads/Hong
 	
 	
 	<%-- [Contents] ######################################################### --%>
 	<jsp:include page="/layout/footer.jsp" />
-	<%--<jsp:include page="/layout/script.jsp" /> --%>
-	<script src="<%= root %>/static/js/orderForm.js"></script> 
+	<jsp:include page="/layout/script.jsp" />
 </body>
 </html>

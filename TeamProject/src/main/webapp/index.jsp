@@ -16,19 +16,18 @@
 	
 	<%-- [Contents] ######################################################### --%>
 	  <div id="slides">
-    <div class="slide_active"><a href="${ root }/product?productNo=${product.productNo}"><img src="${pageContext.request.contextPath}/static/img/메인베너01.jpg" alt="첫번째배너"></a></div>
-    <div class="slide"><a href="${ root }/product?productNo=${product.productNo}"><img src="${pageContext.request.contextPath}/static/img/메인배너2.jpg" alt=""></a></div>
-    <div class="slide"><a href="${ root }/product?productNo=${product.productNo}"><img src="${pageContext.request.contextPath}/static/img/메인베너3.jpg" alt=""></a></div>
+    <div class="slide_active"><a href="#"><img src="${pageContext.request.contextPath}/static/img/메인베너01.jpg" alt="첫번째배너"></a></div>
+    <div class="slide"><a href="#"><img src="${pageContext.request.contextPath}/static/img/메인배너2.jpg" alt=""></a></div>
+    <div class="slide"><a href="#"><img src="${pageContext.request.contextPath}/static/img/메인베너3.jpg" alt=""></a></div>
   </div>
 
 
 <!-- BEST SECTION -->
 <section class="best-section">
   <h2>BEST</h2>
-  
   <div class="scroll-container" id="slider">
 
-   <a href="${ root }/product?productNo=${product.productNo}" class="product-card">
+   <a href="상품링크주소" class="product-card">
   
       <img src="${pageContext.request.contextPath}/static/img/어성초 흔적 에센스 패드.jpg" alt="Product 1">
       <div class="product-info">
@@ -42,7 +41,7 @@
   
     </a>
 
-       <a href="${ root }/product?productNo=${product.productNo}" class="product-card">
+       <a href="상품링크주소" class="product-card">
       <img src="${pageContext.request.contextPath}/static/img/글루타치온좀 cc 선크림.jpg" alt="Product 2">
       <div class="product-info">
         <p class="product-name">글루타치온좀 CC 선크림</p>
@@ -54,7 +53,7 @@
       </div>
     </a>
     
-       <a href="${ root }/product?productNo=${product.productNo}" class="product-card">
+       <a href="상품링크주소" class="product-card">
       <img src="${pageContext.request.contextPath}/static/img/껌딱지 시트 마스트어성초 스티커.jpg" alt="Product 3">
       <div class="product-info">
         <p class="product-name">껌딱지 시트 마스크 </p>
@@ -67,7 +66,7 @@
     </a>
 
 
-       <a href="${ root }/product?productNo=${product.productNo}" class="product-card">
+       <a href="상품링크주소" class="product-card">
       <img src="${pageContext.request.contextPath}/static/img/부활초 크림.jpg" alt="Product 4">
       <div class="product-info">
         <p class="product-name">부활초 크림</p>
@@ -79,7 +78,7 @@
       </div>
     </a>
 
-       <a href="${ root }/product?productNo=${product.productNo}" class="product-card">
+       <a href="상품링크주소" class="product-card">
       <img src="${pageContext.request.contextPath}/static/img/모델링 크림 마스크 어성초 스쿱.jpg" alt="Product 5">
       <div class="product-info">
         <p class="product-name">모델링 크림 마스크</p>
@@ -92,7 +91,7 @@
     </a>
 
 
-       <a href="${ root }/product?productNo=${product.productNo}" class="product-card">
+       <a href="상품링크주소" class="product-card">
       <img src="${pageContext.request.contextPath}/static/img/라이스 오버나이트 마스크 .jpg" alt="Product 6">
       <div class="product-info">
         <p class="product-name">라이스 오버나이트 마스크</p>
@@ -119,8 +118,6 @@
 <section class="banner2">
   <h1>ALL PRODUCT</h1>
 </section>
-	
-
 	
 	
 	<%-- [Contents] ######################################################### --%>
