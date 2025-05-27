@@ -130,27 +130,59 @@ public class CartServlet extends HttpServlet {
 			
 		}
 		
+		if("/insert".equals(path)) {
+			
+			int result = 1; 
+			
+			// 1. 파라미터 받기 
+			// 로그인 구현시 userNo  변경 
+			int userNo = 1; 
+			int productNo = Integer.parseInt(request.getParameter("productNo"));
+			int quantity = Integer.parseInt(request.getParameter("quantity"));
+			
+			
+			// 2. 기존 장바구니에 있는지 확인 
+			Cart existing = cartService.selectByUserNoAndProductNo(userNo, productNo);
+			
+			if(existing != null) {
+				// 3. 이미 있다면 -> 수량만 증가시켜 update 
+				int newQuantity = existing.getQuantity() + quantity; 
+				existing.setQuantity(newQuantity);
+				boolean updated = cartService.updateQuantity(existing.getCartNo(), newQuantity);
+				result = updated ? 1 : 0; 
+				System.out.println("수량만 업데이트");
+			} else {
+				// 4. 없으면 -> 새로 insert 
+				// 4-1. Cart 객체 생성 
+				Cart cart = Cart.builder()
+								.userNo(userNo)
+								.productNo(productNo)
+								.quantity(quantity)
+								.build();
+				
+				// 4-2. DB에 insert
+				result = cartService.insert(cart);
+				
+				
+			}
+			
+			
+			
+			// 4. 결과 처리 (장바구니 페이지로 이동) 
+			if( result > 0 ) {
+				response.sendRedirect(request.getContextPath() + "/cart");
+			} else {
+				response.sendRedirect(request.getContextPath() + "/product/productNo=" + productNo);
+
+			}
+			
+		}
+		
 		
 	}
 
 
 
-	//상품상세페이지에서 장바구니로 이동
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	
 	// TODO: 
 	// 1. doDelete 오버라이딩

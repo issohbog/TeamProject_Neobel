@@ -119,7 +119,7 @@ function deleteCart(url, element) {
         type : 'DELETE',
         success : function(response) {
             if( response == 'SUCCESS' ) {
-				alert("장바구니 삭제")
+				//alert("장바구니 삭제")
 				// 삭제 성공 시, 해당 장바구니 항목 지우기
 				element.remove()
 				

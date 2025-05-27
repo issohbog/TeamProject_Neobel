@@ -92,6 +92,37 @@ public class CartServiceImpl extends BaseServiceImpl<CartDAO, Cart> implements C
 		}
 		return result > 0;
 	}
+
+	
+	@Override
+	public int insert(Cart cart) {
+		int result = 0; 
+		try {
+			return dao.insert(cart);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return 0;
+	}
+
+	
+	@Override
+	public Cart selectByUserNoAndProductNo(int userNo, int productNo) {
+		Cart cart = null;
+		Map<String, Object> map = new HashMap<String, Object>();
+		map.put("user_no", userNo);
+		map.put("product_no", productNo);
+		System.out.println(userNo);
+		System.out.println(productNo);
+		
+		try {
+			cart = dao.selectBy(map);
+			System.out.println(cart);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return cart;
+	}
 	
 	
 	
