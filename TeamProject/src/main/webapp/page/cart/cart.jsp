@@ -12,6 +12,9 @@
 <body>
 	<jsp:include page="/layout/header.jsp" />
 	<%-- [Contents] ######################################################### --%>
+	<div class="cart-container">
+
+		<h1 class="cart-title">Cart.</h1>
 		
 					
 		<div class="cart-container-inner">
@@ -81,10 +84,48 @@
 					</c:forEach>
 					
 	
+				</tbody>
+			</table>
+
+			<div class="cart-delete">
+				<a href="javascript:void(0)" onclick="removeSelected()">선택삭제</a> 
+				<a href="javascript:void(0)" onclick="clearCart()">장바구니 비우기</a>
+			</div>
+
+			<div class="cart-summary">
+				총 상품 금액 = <strong id="total-price"></strong>
+			</div>
+		</div>
+		<div class="cart-footer">
+        <form action="${root}/order/" method="get">
+				<button id="buy-btn" type="submit" class="buy-btn">구매하기</button>
+			</form>
+		</div>
+	</div>
 	
+	<%--시간 차 화면 로딩 --%>
+	<div id="loading-overlay"
+		style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(255, 255, 255, 0.8); z-index: 9999; justify-content: center; align-items: center;">
+		<div class="spinner"></div>
+	</div>
+
+	<script type="text/javascript">
+	document.getElementById("buy-btn").addEventListener("click", function (e) {
+		  e.preventDefault(); // ✅ 기본 submit 막기
+
+		  // 로딩 스피너 표시
+		  document.getElementById("loading-overlay").style.display = "flex";
+
+		  // 0.8초 후 수동으로 이동
+		  setTimeout(function () {
+		    // form 수동 전송
+		    document.querySelector(".cart-footer form").submit();
+		  }, 600);
+		});
+	</script>
+
 	<%-- [Contents] ######################################################### --%>
 	<jsp:include page="/layout/footer.jsp" />
-<<<<<<< HEAD
 	<jsp:include page="/layout/script.jsp" /> 
 
 	<script type="text/javascript">
@@ -184,8 +225,10 @@
 	</script>
 	
 	
-=======
-	<jsp:include page="/layout/script.jsp" />
->>>>>>> refs/heads/Hong
 </body>
 </html>
+
+
+
+
+

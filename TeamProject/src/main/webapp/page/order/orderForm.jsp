@@ -12,6 +12,11 @@
 <body>
 	<jsp:include page="/layout/header.jsp" />
 	<%-- [Contents] ######################################################### --%>
+	<form action="${root}/order/" method="post">
+		<div class="payment-container">
+			
+		    <!-- 제목 -->
+		    <h1 class="payment-title">Order form.</h1>
 		
 		    <!-- 주문 리뷰 테이블 -->
 		    <section class="order-review">
@@ -120,6 +125,7 @@
 	
 	<%-- [Contents] ######################################################### --%>
 	<jsp:include page="/layout/footer.jsp" />
-	<jsp:include page="/layout/script.jsp" />
+	<%--<jsp:include page="/layout/script.jsp" /> --%>
+	<script src="<%= root %>/static/js/orderForm.js"></script> 
 </body>
 </html>
