@@ -1,7 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ include file="/layout/common.jsp" %>
+
+
 <footer>
+
+<div class="footer-box">
+
   <div class="footer-left">
     <p>
       The digital platform for NEOBEL CO.<br>
@@ -47,5 +52,6 @@
         <li>카카오</li>
       </ul>
     </div>
+  </div>
   </div>
 </footer>

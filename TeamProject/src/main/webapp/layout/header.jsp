@@ -13,7 +13,7 @@
       <a href="${ root }/product?productNo=${product.productNo}"><span>PROMOTION</span></a>
       <a href="${ root }/product?productNo=${product.productNo}"><span>PRODUCT</span></a>
       <a href="${pageContext.request.contextPath}/page/Brand/brand.jsp"><span>BRAND</span></a>
-      <a href="공지사항"><span>ABOUT</span></a>
+      <a href="${pageContext.request.contextPath}/page/Notice/noticeList.jsp"><span>ABOUT</span></a>
   </nav>
 <ul class="icons">
       <li><a href="#"><span class="material-symbols-outlined" >search</span></a></li>
@@ -27,7 +27,7 @@
       </li>
 
 
-<%--       <li><a href="${pageContext.request.contextPath}/page/cart/cart.jsp"><span class="material-symbols-outlined">local_mall</span></a></li> --%>
+ <li><a href="${pageContext.request.contextPath}/page/cart/cart.jsp"><span class="material-symbols-outlined">local_mall</span></a></li>
 
 
 

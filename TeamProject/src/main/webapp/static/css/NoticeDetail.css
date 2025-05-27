@@ -1,0 +1,113 @@
+@charset "UTF-8";
+
+/* 페이지 전체 스타일 */
+.notice-detail-wrapper {
+  width: auto;
+  height: 1412px;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  padding-top: 100px; /* 상단 여백 */
+  box-sizing: border-box;
+  
+}
+
+.title2 {
+	width: 1401px;
+	height: 47px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	
+	
+}
+/* 공지사항 전체 박스 */
+.notice-box {
+  width: 1401px;
+  height: 783px;
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ 
+}
+
+/* 내용 전체 박스 */
+.notice-content-container {
+  width: 899px;
+  height: 542px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+/* 제목 박스 */
+.notice-title-box {
+  width: 899px;
+  height: 69px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ccc;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 0 10px;
+  box-sizing: border-box;
+}
+
+/* 콘텐츠 박스 */
+.notice-body-box {
+  width: 899px;
+  height: 388px;
+  padding: 20px;
+  box-sizing: border-box;
+  line-height: 1.6;
+  font-size: 16px;
+  color: #333;
+  overflow-y: auto;
+   border-bottom: 1px solid #ccc;
+}
+
+/* 버튼 영역 */
+.notice-button-box {
+  width: 899px;
+ 	
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+   
+}
+
+
+.notice-textarea {
+  width: 100%;
+  height: 100%;
+  border: none;
+  resize: none;
+  font-size: 16px;
+  line-height: 1.6;
+  padding: 10px;
+  box-sizing: border-box;
+  color: #333;
+  font-family: inherit;
+  background-color: transparent; /* 배경 필요 시 변경 */
+  outline: none;
+}
+
+
+.notice-button-box button {
+  width: 54px;
+  height: 44px;
+  font-size: 14px;
+  cursor: pointer;
+  background-color: #000;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+}
+
+.notice-button-box button:hover {
+  background-color: #000;
+}
