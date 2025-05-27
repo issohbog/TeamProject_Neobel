@@ -1,14 +1,8 @@
 @charset "UTF-8";
 
-<<<<<<< HEAD
 footer {
   width: 1908px;
   height: 500px;
-=======
-   footer {
-  width: 1909px;
-  height: 370px;
->>>>>>> refs/heads/Hong
   background-color: #000000;
   display: flex;
  align-items : center;

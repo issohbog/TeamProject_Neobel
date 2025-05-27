@@ -1,6 +1,5 @@
 package Servlet;
 
-<<<<<<< HEAD
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -27,8 +26,6 @@ import Service.ProductServiceImpl;
 import Service.UserService;
 import Service.UserServiceImpl;
 import jakarta.servlet.RequestDispatcher;
-=======
->>>>>>> refs/heads/Hong
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -43,7 +40,6 @@ public class OrderServlet extends HttpServlet {
 
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-<<<<<<< HEAD
 		
 		String page = "";
 		
@@ -104,9 +100,6 @@ public class OrderServlet extends HttpServlet {
 		
 		
 	
-=======
-		response.getWriter().append("Served at: ").append(request.getContextPath());
->>>>>>> refs/heads/Hong
 	}
 
 	

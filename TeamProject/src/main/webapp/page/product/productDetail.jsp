@@ -10,7 +10,6 @@
 	<jsp:include page="/layout/link.jsp" />
 </head>
 <body>
-<<<<<<< HEAD
     <jsp:include page="/layout/header.jsp" />
 
     <div class="detail-wrapper3">
@@ -109,15 +108,5 @@
     <jsp:include page="/layout/script.jsp" />
     <script src="${pageContext.request.contextPath}/static/js/productDetail.js"></script>
 
-=======
-	<jsp:include page="/layout/header.jsp" />
-	<%-- [Contents] ######################################################### --%>
-		
-	
-	
-	<%-- [Contents] ######################################################### --%>
-	<jsp:include page="/layout/footer.jsp" />
-	<jsp:include page="/layout/script.jsp" />
->>>>>>> refs/heads/Hong
 </body>
 </html>

@@ -11,7 +11,6 @@ public class CartServiceImpl extends BaseServiceImpl<CartDAO, Cart> implements C
 		super(dao);
 	}
 
-<<<<<<< HEAD
 	@Override
 	public List<Cart> listByUserNo(int userNo) {
 		// userNo 를 조건으로 전달하기 위한 파라미터 맵을 생성 
@@ -120,7 +119,5 @@ public class CartServiceImpl extends BaseServiceImpl<CartDAO, Cart> implements C
 	
 	
 
-=======
->>>>>>> refs/heads/Hong
 	 
 }

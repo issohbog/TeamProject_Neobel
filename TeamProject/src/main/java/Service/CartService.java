@@ -4,7 +4,6 @@ import DTO.Cart;
 
 public interface CartService extends BaseService<Cart> {
 
-<<<<<<< HEAD
 	// 장바구니 단일 항목 삭제 
 	public boolean remove(int cartNo);
 
@@ -23,6 +22,4 @@ public interface CartService extends BaseService<Cart> {
 	public Cart selectByUserNoAndProductNo(int userNo, int productNo);
 	
 	
-=======
->>>>>>> refs/heads/Hong
 }

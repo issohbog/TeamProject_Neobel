@@ -13,7 +13,6 @@
 	<jsp:include page="/layout/header.jsp" />
 	<%-- [Contents] ######################################################### --%>
 		
-<<<<<<< HEAD
 		    <!-- 주문 리뷰 테이블 -->
 		    <section class="order-review">
 		      <h2>ORDER REVIEW</h2>
@@ -117,8 +116,6 @@
         </div>
       </div>
   </div>	 --%>
-=======
->>>>>>> refs/heads/Hong
 	
 	
 	<%-- [Contents] ######################################################### --%>
