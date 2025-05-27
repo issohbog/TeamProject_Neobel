@@ -8,8 +8,8 @@ CREATE TABLE `carts` (
 	`quantity` INT NOT NULL COMMENT '상품 수량',
 	PRIMARY KEY (`cart_no`),
 	UNIQUE KEY `UK_user_product` (`user_no`, `product_no`),
-	FOREIGN KEY (`user_no`) REFERENCES `users`(`user_no`),
-	FOREIGN KEY (`product_no`) REFERENCES `products`(`product_no`)
+	FOREIGN KEY (`user_no`) REFERENCES `users`(`user_no`)  ON DELETE CASCADE,
+	FOREIGN KEY (`product_no`) REFERENCES `products`(`product_no`)  ON DELETE CASCADE
 );
 
 INSERT INTO carts (user_no, product_no, quantity)

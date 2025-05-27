@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <!-- <title>project💻 - ALOHA CLASS🌴</title> -->
-<!-- 파비콘 -->
-<link rel="icon" href="<%= root %>/static/img/logo.png" type="image/x-icon">
+<!-- 로고 -->
+<link rel="icon" href="<%= root %>/static/img/네오벨 로고.png" type="image/x-icon">
 <!-- 썸네일 이미지 설정 -->
 <meta property="og:image" content="https://i.imgur.com/yiTQ3EV.jpg">
 <!-- 웹 페이지 설명 (선택 사항) -->

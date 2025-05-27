@@ -1,5 +1,11 @@
 package DAO;
+import com.alohaclass.jdbc.dao.BaseDAOImpl;
 
-public class ProductDAO {
+import DTO.Product;
+
+
+public class ProductDAO extends BaseDAOImpl<Product> {
+
+
 
 }
