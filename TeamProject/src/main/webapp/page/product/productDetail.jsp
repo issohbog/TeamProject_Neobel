@@ -50,16 +50,16 @@
                 </div>
 
                 <!-- 장바구니 & 구매하기 폼 -->
-                <form id="cartForm" method="post" action="${pageContext.request.contextPath}/cart">
+                <form id="cartForm" method="post" action="${root}/cart/insert">
                     <input type="hidden" name="productNo" value="${product.productNo}">
                     <input type="hidden" name="quantity" id="cartQuantity" value="1">
-                    <button type="submit" class="button3 cart-button3">장바구니 담기</button>
+                    <button type="submit" id="cart-btn" class="button3 cart-button3">장바구니 담기</button>
                 </form>
 
-                <form id="buyForm" method="post" action="${pageContext.request.contextPath}/Order">
+                <form id="buyForm" method="get" action="${root}/order">
                     <input type="hidden" name="productNo" value="${product.productNo}">
                     <input type="hidden" name="quantity" id="buyQuantity" value="1">
-                    <button type="submit" class="button3 buy-button3">구매하기</button>
+                    <button type="submit" id="buy-btn" class="button3 buy-button3">구매하기</button>
                 </form>
                 
                 
@@ -68,9 +68,44 @@
             
         </div>
     </div>
+	<%-- 화면 로딩 --%>
+	<div id="loading-overlay"
+		style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(255, 255, 255, 0.8); z-index: 9999; justify-content: center; align-items: center;">
+		<div class="spinner"></div>
+	</div>
 
-    <jsp:include page="/layout/footer.jsp" />
+	<script type="text/javascript">
+	document.getElementById("buy-btn").addEventListener("click", function (e) {
+		  e.preventDefault(); // ✅ 기본 submit 막기
+
+		  // 로딩 스피너 표시
+		  document.getElementById("loading-overlay").style.display = "flex";
+
+		  // 0.3초 후 수동으로 이동
+		  setTimeout(function () {
+		    // form 수동 전송
+			  document.getElementById("buyForm").submit();
+		  }, 300);
+		});
+	
+	document.getElementById("cart-btn").addEventListener("click", function (e) {
+		  e.preventDefault(); // ✅ 기본 submit 막기
+
+		  // 로딩 스피너 표시
+		 	document.getElementById("loading-overlay").style.display = "flex";
+
+		  // 0.3초 후 수동으로 이동
+		  setTimeout(function () {
+		    // form 수동 전송
+			  document.getElementById("cartForm").submit();
+		  }, 300);
+		});
+	</script>
+
+
+	<jsp:include page="/layout/footer.jsp" />
     <jsp:include page="/layout/script.jsp" />
     <script src="${pageContext.request.contextPath}/static/js/productDetail.js"></script>
+
 </body>
 </html>

@@ -30,3 +30,5 @@ window.onload = function () {
 
   updateTotal();
 };
+
+
