@@ -26,7 +26,7 @@ public class User {
 	private int isAdmin;
 	private String addr; 
 	private String addrDetail;
-	private String postcode;
+	private String postCode;
 	private String req;
 	
 	

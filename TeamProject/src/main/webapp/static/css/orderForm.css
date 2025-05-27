@@ -27,7 +27,9 @@ body {
   font-weight: 100;
 }
 
-h2 {
+.order-review h2,
+.total-payment h2,
+.payment-method h2 {
     font-weight: 100;
     font-size: 14px;
     display: flex;
@@ -53,6 +55,7 @@ h2 {
   border-top: 1px solid #ccc;
   padding: 15px;
   text-align: center;
+  vertical-align: middle;
 }
 
 .review-table th {
@@ -70,8 +73,8 @@ h2 {
   gap: 15px;
   justify-content: start;
   text-align: left;
-      position: relative;
-    top: -1px;
+/*       position: relative;
+    top: -1px; */
 
 }
 
@@ -156,8 +159,8 @@ h2 {
 .radio-group input[type="radio"]:checked + label::after {
   content: "";
   position: absolute;
-  left: 5px;
-  top: 7px;
+  left: 3px;
+  top: 5px;
   width: 10px;
   height: 10px;
   background-color: black;
@@ -288,13 +291,28 @@ p[class^="popup"] {
   font-size: 14px;
 }
 
-.container {
+.modal-container {
     display: flex;
     flex-direction: column;
     align-items: center;
     border-top: 1px solid #9A9A9A;
 }
 
-.container > img {
+.modal-container > img {
     width: 70%;
+}
+
+/* 시간차 로딩 */
+.spinner {
+  border: 6px solid #f3f3f3;
+  border-top: 6px solid #007bff;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0%   { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }

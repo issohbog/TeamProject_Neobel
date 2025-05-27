@@ -21,3 +21,13 @@ document.addEventListener("DOMContentLoaded", function () {
     }, 400);    // 트랜지션 시간과 일치(0.4초)
   };
 });
+
+document.getElementById("buy-btn").addEventListener("click", function (e) {
+  // 로딩 스피너 표시
+  document.getElementById("loading-overlay").style.display = "flex";
+
+  // 0.8초 후에 결제 페이지로 이동
+  setTimeout(function () {
+    window.location.href = "${pageContext.request.contextPath}/order"; // 결제페이지 URL
+  }, 2500);
+});
