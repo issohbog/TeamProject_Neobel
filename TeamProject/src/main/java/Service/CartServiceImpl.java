@@ -48,18 +48,6 @@ public class CartServiceImpl extends BaseServiceImpl<CartDAO, Cart> implements C
 	}
 
 			
-	
-	
-	@Override
-	public boolean insert(Cart cart) {
-	    try {
-	        int result = dao.insert(cart);  // CartDAO에 있는 insert 사용
-	        return result > 0;
-	    } catch (Exception e) {
-	        e.printStackTrace();
-	        return false;
-	    }
-	}
 
 
 	@Override
