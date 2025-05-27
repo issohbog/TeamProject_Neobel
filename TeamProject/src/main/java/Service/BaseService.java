@@ -14,4 +14,5 @@ public interface BaseService<T> {
     boolean updateById(T entity, String id);            // id(PK) 수정
     boolean delete(Long no);                            // no(PK) 삭제
     boolean deleteById(String id);                      // id(PK) 삭제
+	boolean isUserIdDuplicate(String userId);			// id 중복체크
 }

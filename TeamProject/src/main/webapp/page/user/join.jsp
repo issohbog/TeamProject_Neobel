@@ -10,6 +10,7 @@
 	<jsp:include page="/layout/link.jsp" />
 
 	    <link rel="stylesheet" href="/static/css/join.css" />
+	    <link rel="script" href="/static/js/join.js" />
 	
 
 </head>
@@ -20,47 +21,24 @@
 	<%-- [Contents] ######################################################### --%>
 
 
-    <main class="join">
-      <section class="join-container">
-        <h1 class="join-title">회원가입</h1>
-        <hr class="join-divider" />
-        <form class="join-form">
-          <div class="form-group">
+    <main class="mypage">
+      <section class="mypage-container">
+        <h1 class="mypage-title">회원가입</h1>
+        <hr class="mypage-divider" />
+        <form class="mypage-form" name="joinForm">
+          <div class="mypage-group">
             <label for="user-id">아이디</label>
-              <div class="input-wrapper">
-              <input type="text" id="user-id" name="user-id" placeholder="ID" required />
-		        <button type="button" class="btn-check">중복확인</button>
-		        		<b><font size="4" color="gray">ID 중복 확인</font></b>
-			<br>
-			
-			<form name="checkIdForm">
-				<input type="text" name="id" value="${user_id}" id="userId" disabled>
-					
-				<c:choose>
-				<c:when test="${result==1}">
-					<p style="color: red">이미 사용 중인 아이디입니다.</p>
-					<input type="hidden" name="chResult" value="N"/>
-				</c:when>
-				<c:when test="${result==0 }">
-					<p style="color: red">사용가능한 아이디입니다.</p>
-					<input type="hidden" name="chResult" value="Y"/>
-				</c:when>
-				<c:otherwise>
-					<p>오류 발생(-1)</p>
-					<input type="hidden" name="chResult" value="N"/>
-				</c:otherwise>
-				</c:choose>
-		
-				<input type="button" onclick="window.close()" value="취소"/><br>
-				<input type="button" onclick="sendCheckValue()" value="사용하기"/>
-		
-			</form>
-              </div>              
+            <div class="input-group">
+              <input type="text" id="userId" name="user_id" placeholder="ID" required />
+              <button type="button" class="btn-checkId" onclick="checkUser()">중복체크</button>
+
+           </div>
             <small>(영문소문자/숫자, 4~16자)</small>
           </div>
           <div class="form-group">
             <label for="password">비밀번호</label>
             <input type="password" id="password" name="password" placeholder="PASSWORD" required />
+
             <small>(영문 대소문자/숫자/특수문자 중 2가지 이상 조합, 8~16자)</small>
           </div>
           <div class="form-group">
@@ -83,10 +61,10 @@
             <label for="detailed-address">상세주소</label>
             <input type="text" id="detailed-address" name="detailed-address" placeholder="상세주소" required />
           </div>
-          <div class="form-group">
-            <label for="delivery-message">배송요청사항</label>
-            <input type="text" id="delivery-message" name="delivery-message" placeholder="배송요청사항" />
-          </div>
+           <div class="form-group">
+             <label for="delivery-message">배송요청사항</label>
+             <input type="text" id="delivery-message" name="delivery-message" placeholder="배송요청사항" />
+           </div>
           <div class="form-group">
             <label>휴대폰</label>
             <div class="phone-group">
@@ -118,9 +96,10 @@
             <label for="referral-code">결제방법</label>
             <input type="text" id="referral-code" name="referral-code" placeholder="결제방법" />
           </div>
+          <div class="form-group">
           <button type="submit" class="btn-join">회원가입</button>
-          <button type="submit" class="btn-cancelation">취소</button>
-            
+          <button type="submit" class="btn-cancel" id="btn-cancel">취소</button>
+		  </div>            
           
         </form>
       </section>

@@ -8,9 +8,6 @@ import com.alohaclass.jdbc.dao.BaseDAOImpl;
 import com.alohaclass.jdbc.dto.Page;
 import com.alohaclass.jdbc.dto.PageInfo;
 
-import DAO.CartDAO;
-import DTO.Cart;
-
 public class BaseServiceImpl<D extends BaseDAOImpl<T>, T> implements BaseService<T> {
 	
 	protected D dao;
@@ -128,7 +125,6 @@ public class BaseServiceImpl<D extends BaseDAOImpl<T>, T> implements BaseService
 		return result > 0;
 	}
 
-
-
+	
 	
 }

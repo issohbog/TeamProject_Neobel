@@ -59,6 +59,3 @@ slider.addEventListener('mousemove', (e) => {
   const walk = (x - startX) * 1.5; // 드래그 민감도
   slider.scrollLeft = scrollLeft - walk;
 });
-
-
-

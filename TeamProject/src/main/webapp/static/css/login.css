@@ -214,3 +214,14 @@ small {
   color: #888;
   font-size: 0.9em;
 }
+
+/* 경고메세지 */
+.alert {
+    color: red;
+    font-size: 14px;
+    padding: 10px;
+    border: 1px solid red;
+    margin-top: 10px;
+    background-color: #f8d7da;
+    border-radius: 5px;
+}
