@@ -37,7 +37,8 @@
 		        <c:forEach var="cart" items="${cartList}" varStatus="status">	
 		          <tr>
 		            <td class="order-product-info">
-		                <img src="${pageContext.request.contextPath}/static/${cart.product.imagePath}" alt="product" />
+<%-- 		                <img src="${pageContext.request.contextPath}/static/${cart.product.imagePath}" alt="product" /> --%>
+<img src="${root}/${fn:replace(cart.product.imagePath, 'static/static', 'static')}" alt="product">
 		                <div>
 		                    <span>${cart.product.productName}</span>
 		                </div>
