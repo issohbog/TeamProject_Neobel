@@ -62,6 +62,19 @@ body {
   
 }
 
+.orderHistory-order-code a {
+	text-decoration: none;
+    color: black;
+    transition: color 0.3s;
+}
+
+.orderHistory-order-code a:hover {
+	text-decoration: underline;
+    color: #8E8C8C;
+    cursor: pointer;
+}
+
+
 .orderHistory-product-info div {
   max-width: 140px;         /* 너비 제한을 줘야 줄바꿈이 일어남 */
   word-wrap: break-word;    /* 단어 기준으로 줄바꿈 */

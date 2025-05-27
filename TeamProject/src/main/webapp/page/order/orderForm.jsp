@@ -94,12 +94,17 @@
 		
 		    <!-- 결제 버튼 -->
 		    <div class="submit-box">
-		      <button type="submit" class="submit-btn" onclick="openModal()">결제하기</button>
+		      <button type="submit" id="buy-btn" class="submit-btn" onclick="openModal()">결제하기</button>
 		    </div>
 	  </div>
   </form>
 
-  <!-- 주문 완료 modal -->
+	<div id="loading-overlay"
+		style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(255, 255, 255, 0.8); z-index: 9999; justify-content: center; align-items: center;">
+		<div class="spinner"></div>
+	</div>
+
+	<!-- 주문 완료 modal -->
    <!-- 주문 페이지 내에 이 모달을 미리 삽입해두기 -->
 <%--   <div class="modal" id="order-complete-modal">
     <div class="order-popup">

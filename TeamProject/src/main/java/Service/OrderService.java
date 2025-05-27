@@ -16,4 +16,10 @@ public interface OrderService extends BaseService<Order> {
 	// 주문 상세 생성 
 	public Order getOrderByOrderNo(int orderNo);
 	
+	// 주문 목록 생성 - 모든 주문 내역 확인 용 
+	public List<Order> getOrderByUserNo(int userNo);
+	
+	// 주문 코드 (order_code) 생성 (java에서 생성 후 db에 업데이트)
+	public void updateOrderCode(Order order);
+	
 }
