@@ -14,7 +14,6 @@
   width: 900px;
   height: 700px;
   margin-top: -300px;
-
 }
 
 .product-image3 {
@@ -138,13 +137,15 @@
   display: block;
 }
 
-.cart-button3 {
+/* 장바구니 버튼 스타일 */
+button.cart-button3 {
   background-color: #fff;
   color: #000;
   border: 1px solid #000;
 }
 
-.buy-button3 {
+/* 구매 버튼 스타일 */
+button.buy-button3 {
   background-color: #000;
   color: #fff;
 }

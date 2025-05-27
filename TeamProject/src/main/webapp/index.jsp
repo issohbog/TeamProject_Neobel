@@ -16,18 +16,19 @@
 	
 	<%-- [Contents] ######################################################### --%>
 	  <div id="slides">
-    <div class="slide_active"><a href="#"><img src="${pageContext.request.contextPath}/static/img/메인베너01.jpg" alt="첫번째배너"></a></div>
-    <div class="slide"><a href="#"><img src="${pageContext.request.contextPath}/static/img/메인배너2.jpg" alt=""></a></div>
-    <div class="slide"><a href="#"><img src="${pageContext.request.contextPath}/static/img/메인베너3.jpg" alt=""></a></div>
+    <div class="slide_active"><a href="${ root }/product?productNo=${product.productNo}"><img src="${pageContext.request.contextPath}/static/img/메인베너01.jpg" alt="첫번째배너"></a></div>
+    <div class="slide"><a href="${ root }/product?productNo=${product.productNo}"><img src="${pageContext.request.contextPath}/static/img/메인배너2.jpg" alt=""></a></div>
+    <div class="slide"><a href="${ root }/product?productNo=${product.productNo}"><img src="${pageContext.request.contextPath}/static/img/메인베너3.jpg" alt=""></a></div>
   </div>
 
 
 <!-- BEST SECTION -->
 <section class="best-section">
   <h2>BEST</h2>
+  
   <div class="scroll-container" id="slider">
 
-   <a href="" class="product-card">
+   <a href="${ root }/product?productNo=${product.productNo}" class="product-card">
   
       <img src="${pageContext.request.contextPath}/static/img/어성초 흔적 에센스 패드.jpg" alt="Product 1">
       <div class="product-info">

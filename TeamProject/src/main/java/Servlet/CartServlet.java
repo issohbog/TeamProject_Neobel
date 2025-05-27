@@ -87,6 +87,7 @@ public class CartServlet extends HttpServlet {
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
+
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		System.out.println("dopost 실행");
@@ -133,6 +134,24 @@ public class CartServlet extends HttpServlet {
 	}
 
 
+
+	//상품상세페이지에서 장바구니로 이동
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	// TODO: 
 	// 1. doDelete 오버라이딩
 	// 2. cartNo 파라미터 가져오기

@@ -65,7 +65,18 @@
 									</div>
 								</div>
 							</td>
-							<td class="subtotal"></td>
+								<!-- 원본 총합계
+								<td class="subtotal"></td>
+								-->
+								
+								
+								<!--수정총합계 -->
+								
+								
+								<td class="subtotal">${cart.product.price * cart.quantity}</td>
+								
+								
+								
 							<td><button class="delete-btn" onclick="remove( this, '${cart.cartNo}' )">삭제</button></td>
 						</tr>
 					</c:forEach>
@@ -84,7 +95,7 @@
 			</div>
 		</div>
 		<div class="cart-footer">
-			<form action="${root}/order/" method="get">
+        <form action="${root}/order/" method="get">
 				<button id="buy-btn" type="submit" class="buy-btn">구매하기</button>
 			</form>
 		</div>
