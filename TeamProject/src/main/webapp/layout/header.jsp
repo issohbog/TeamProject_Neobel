@@ -10,8 +10,8 @@
   </div>
  
   <nav class="nav-menu">
-      <a href="${ root }/product?productNo=${product.productNo}"><span>PROMOTION</span></a>
-      <a href="${ root }/product?productNo=${product.productNo}"><span>PRODUCT</span></a>
+      <a href="${ root }/product"><span>PROMOTION</span></a>
+      <a href="${ root }/product"><span>PRODUCT</span></a>
       <a href="${pageContext.request.contextPath}/page/Brand/brand.jsp"><span>BRAND</span></a>
       <a href="${pageContext.request.contextPath}/page/Notice/noticeList.jsp"><span>ABOUT</span></a>
   </nav>
@@ -27,7 +27,10 @@
       </li>
 
 
- <li><a href="${pageContext.request.contextPath}/page/cart/cart.jsp"><span class="material-symbols-outlined">local_mall</span></a></li>
+
+
+<%--       <li><a href="${pageContext.request.contextPath}/page/cart/cart.jsp"><span class="material-symbols-outlined">local_mall</span></a></li> --%>
+<li><a href="${ root }/cart"><span class="material-symbols-outlined">local_mall</span></a></li>
 
 
 

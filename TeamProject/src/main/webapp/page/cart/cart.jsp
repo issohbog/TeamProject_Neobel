@@ -41,7 +41,9 @@
 					<c:forEach var="cart" items="${cartList}" varStatus="status">	
 						<tr>
 							<td><input type="checkbox" /></td>
-							<td class="cart-product-info"><img src="${pageContext.request.contextPath}/static/${cart.product.imagePath}" alt="product" />
+							<td class="cart-product-info">
+<%-- 								<img src="${root}/${cart.product.imagePath}" alt="product" /> --%>
+								<img src="${root}/${fn:replace(cart.product.imagePath, 'static/static', 'static')}" alt="product">
 								<div>
 									<span>${cart.product.productName}</span> 
 								</div>
@@ -178,7 +180,7 @@
 		                    document.querySelector(".cart-summary strong").innerText = "0";
 		                }
 
-		                alert("선택한 항목 삭제 완료!");
+		                //alert("선택한 항목 삭제 완료!");
 		            }
 		        },
 		        error: function() {
@@ -205,7 +207,7 @@
 		  })
 		  .then(result => {
 		    if (result === "SUCCESS") {
-		      alert("장바구니가 모두 비워졌습니다.");
+		      //alert("장바구니가 모두 비워졌습니다.");
 		      location.reload(); // 화면 새로고침
 		    } else {
 		      alert("장바구니 비우기에 실패했습니다.");

@@ -20,4 +20,11 @@ public interface CartService extends BaseService<Cart> {
 	// 장바구니 수량 업데이트 
 	public boolean updateQuantity(int cartNo, int quantity);
 	
+	// 장바구니에 항목 추가 
+	public int insert(Cart cart);
+	
+	// 장바구니에서 동일한 상품 담겨있는지 조회
+	public Cart selectByUserNoAndProductNo(int userNo, int productNo);
+	
+	
 }
