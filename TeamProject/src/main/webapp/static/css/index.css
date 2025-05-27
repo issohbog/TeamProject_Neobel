@@ -24,6 +24,7 @@
   opacity: 0;
   transition: opacity 0.5s ease-in-out;
   z-index: 0;
+  border:none;
 }
 
 .slide_active {
@@ -39,6 +40,7 @@
       object-position: center;
       display: block;
       transition: none; /* 이미지 크기나 위치 관련 transition 제거 */
+      border: none;
   }
 
 
@@ -214,4 +216,6 @@ html, body {
 
 
 */
+
+
 

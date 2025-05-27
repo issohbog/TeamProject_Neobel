@@ -6,5 +6,11 @@
 <%-- jQuery --%>
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script> 
 <script src="<%= root %>/static/js/script.js"></script> 
-<script src="<%= root %>/static/js/Main.js"></script>
-<script src="<%= root %>/static/js/join.js"></script> 
+<script src="<%= root %>/static/js/Main.js"></script> 
+
+<script src="<%= root %>/static/js/productDetail.js"></script> 
+
+<script src="<%= root %>/static/js/cart.js" defer></script> 
+<script src="<%= root %>/static/js/orderFrom.js"></script> 
+<script src="<%= root %>/static/js/orderResult.js"></script> 
+

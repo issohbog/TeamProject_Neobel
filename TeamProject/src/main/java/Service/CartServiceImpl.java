@@ -1,12 +1,20 @@
 package Service;
 
-import com.alohaclass.test.Service.BoardService;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 import DAO.CartDAO;
+import DAO.ProductDAO;
 import DTO.Cart;
+import DTO.Product;
 
 public class CartServiceImpl extends BaseServiceImpl<CartDAO, Cart> implements CartService {
 
+	ProductDAO productDAO = new ProductDAO();
+	
+	CartDAO cartDAO = new CartDAO();
+	
 	public CartServiceImpl(CartDAO dao) {
 		super(dao);
 	}
@@ -120,4 +128,16 @@ public class CartServiceImpl extends BaseServiceImpl<CartDAO, Cart> implements C
 	
 
 	 
+
 }
+
+
+
+
+
+
+
+
+
+
+

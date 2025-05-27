@@ -6,7 +6,7 @@
   
   <div class="menu">
      <div class="logo">
-    <a href="Main.HTML"><img src="<%= root %>/static/img/네오벨 로고.png" width="278" height="74" alt="NEOBEL 로고"></a>
+    <a href="${pageContext.request.contextPath}/index.jsp"><img src="<%= root %>/static/img/네오벨 로고.png" width="278" height="74" alt="NEOBEL 로고"></a>
   </div>
  
   <nav class="nav-menu">
@@ -19,11 +19,30 @@
       <li><a href="#"><span class="material-symbols-outlined" >search</span></a></li>
       
       <li class="person-menu">
-        <a href="#"><span class="material-symbols-outlined">person</span></a>
-            <ul class="dropdown">
-            <li><a href="#">회원가입</a></li>
-            <li><a href="#">로그인</a></li>
-         </ul>
+	      <%	
+	          if( session.getAttribute("loginUser") != null ) {
+	      %>
+          <a href="#"><span class="material-symbols-outlined">person</span></a>
+          <ul class="dropdown">
+            <li><a href="${ root }/mypage">마이페이지</a></li>
+            <li><a href="${ root }/logout">로그아웃</a></li>
+          </ul>
+          <%
+             } else {
+          %>
+          <a href="#"><span class="material-symbols-outlined">person</span></a>
+          <ul class="dropdown">
+            <li><a href="${ root }/join">회원가입</a></li>
+            <li><a href="${ root }/login">로그인</a></li>
+          </ul>
+            <%
+                 }
+            %>
+<!--       	<a href="#"><span class="material-symbols-outlined">person</span></a> -->
+<!--         <ul class="dropdown"> -->
+<%--             <li><a href="${ root }/join">회원가입</a></li> --%>
+<%--             <li><a href="${ root }/login">로그인</a></li> --%>
+<!--         </ul> -->
       </li>
 
 

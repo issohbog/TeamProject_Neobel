@@ -1,7 +1,6 @@
 
 DROP TABLE IF EXISTS `products`;
 
-
 CREATE TABLE `products` (
 	`product_no` INT NOT NULL AUTO_INCREMENT COMMENT '상품고유번호',
 	`product_name` VARCHAR(50) NOT NULL COMMENT '상품명',
@@ -12,7 +11,6 @@ CREATE TABLE `products` (
 	PRIMARY KEY (`product_no`)
 );
 
-TRUNCATE TABLE orders;
 TRUNCATE TABLE products;
 
 INSERT INTO products (product_name, image_name, image_path, description, price)
