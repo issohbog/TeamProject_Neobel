@@ -29,7 +29,7 @@
 
 <%--       <li><a href="${pageContext.request.contextPath}/page/cart/cart.jsp"><span class="material-symbols-outlined">local_mall</span></a></li> --%>
 
-      <li><a href="${ root }/cart"><span class="material-symbols-outlined">local_mall</span></a></li>
+
 
       <li><a href="#"><span class="material-symbols-outlined">help</span></a></li>
     </ul>
