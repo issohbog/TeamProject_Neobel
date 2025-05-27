@@ -41,7 +41,9 @@
 					<c:forEach var="cart" items="${cartList}" varStatus="status">	
 						<tr>
 							<td><input type="checkbox" /></td>
-							<td class="cart-product-info"><img src="${pageContext.request.contextPath}/static/${cart.product.imagePath}" alt="product" />
+							<td class="cart-product-info">
+<%-- 								<img src="${root}/${cart.product.imagePath}" alt="product" /> --%>
+								<img src="${root}/${fn:replace(cart.product.imagePath, 'static/static', 'static')}" alt="product">
 								<div>
 									<span>${cart.product.productName}</span> 
 								</div>
