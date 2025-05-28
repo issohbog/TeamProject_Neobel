@@ -38,15 +38,22 @@ public class CartServlet extends HttpServlet {
 	
 		
 		String page = "";
+		String root = request.getContextPath();
 		
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 		
-//		HttpSession session = request.getSession();
-//		User user = (User) session.getAttribute("loginUser");
-//		int userNo = user.getUserNo();
+		HttpSession session = request.getSession();
+		Object loginUserObj = session.getAttribute("loginUser");
+		System.out.println(loginUserObj + "############");
+		User user = loginUserObj != null ? (User) loginUserObj : null;
 		
-		// 사용자 고유번호를 임시로 1로 설정 
-		int userNo = 1;
+		if( user == null ) {
+			System.out.println("로그인 해야 장바구니에 담을 수 있습니다.");
+			response.sendRedirect(root + "/login");
+			return;
+		}
+		// 사용자 번호 
+		int userNo = user.getUserNo();
 		
 		// CartDAO 객체를 생성, db와 연결하여 Cart 관련 쿼리 실행하는 역할(장바구니 목록조회/항목 추가/삭제) 
 		CartDAO cartDao = new CartDAO();
@@ -100,6 +107,7 @@ public class CartServlet extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 		response.setContentType("application/json; charset=UTF-8");
 		
+		String root = request.getContextPath();
 		String path = request.getPathInfo();
 		
 		
@@ -131,12 +139,26 @@ public class CartServlet extends HttpServlet {
 		}
 		
 		if("/insert".equals(path)) {
+			HttpSession session = request.getSession();
+			Object loginUserObj = session.getAttribute("loginUser");
+			System.out.println(loginUserObj + "############");
+			User user = loginUserObj != null ? (User) loginUserObj : null;
+			int userNo;
+			
+			if( user == null ) {
+				System.out.println("로그인 해야 장바구니에 담을 수 있습니다.");
+				response.sendRedirect(root + "/login");
+				return;
+			}
+			
+			userNo = user.getUserNo();
+			System.out.println("현재 유저 : " + user);
+			System.out.println("유저 번호 : " + userNo);
 			
 			int result = 1; 
 			
 			// 1. 파라미터 받기 
 			// 로그인 구현시 userNo  변경 
-			int userNo = 1; 
 			int productNo = Integer.parseInt(request.getParameter("productNo"));
 			int quantity = Integer.parseInt(request.getParameter("quantity"));
 			
