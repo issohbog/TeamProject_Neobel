@@ -70,7 +70,12 @@
 		    <label for="delivery-message">배송요청사항</label>
 		    <input type="text" id="delivery-message" name="req" value="${user.req}" class="form-control" placeholder="배송요청사항" />
 		  </div>
-		
+		  
+		  <div class="d-grid gap-2 my-4">
+		  	<button type="button" class="orderResult" id="orderResult" onclick="location.href='${pageContext.request.contextPath}/page/order/orderResult.jsp'" >주문 내역 조회</button>
+		  </div>
+		    
+		    
 		  <div class="form-group">
 		    <label>휴대폰</label>
 		    <div class="phone-group d-flex gap-2">
