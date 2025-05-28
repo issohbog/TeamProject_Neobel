@@ -9,4 +9,6 @@ public interface UserService extends BaseService<User> {
 
 	// userNo로 User정보 조회 
 	User selectbyUserNo(int userNo);
+	
+	User login(String userId, String userPw);
 }

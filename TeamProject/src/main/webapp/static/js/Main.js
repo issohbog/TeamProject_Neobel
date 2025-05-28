@@ -12,7 +12,7 @@
 
 //드롭다운 메뉴
 
-    const personMenu = document.querySelector('.person-menu > a');
+const personMenu = document.querySelector('.person-menu > a');
 const dropdown = document.querySelector('.person-menu .dropdown');
 
 personMenu.addEventListener('click', (e) => {

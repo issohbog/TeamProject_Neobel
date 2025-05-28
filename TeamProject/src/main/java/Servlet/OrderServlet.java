@@ -2,6 +2,7 @@ package Servlet;
 
 import java.io.IOException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -31,6 +32,7 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 
 
 @WebServlet("/order/*")
@@ -43,19 +45,26 @@ public class OrderServlet extends HttpServlet {
 		String page = "";
 		
 		String path = request.getPathInfo();
+		String root = request.getContextPath();
 		
+		HttpSession session = request.getSession();
+		Object loginUserObj = session.getAttribute("loginUser");
+		System.out.println(loginUserObj + "############");
+		User user = loginUserObj != null ? (User) loginUserObj : null;
 		
-//		HttpSession session = request.getSession();
-//		User user = (User) session.getAttribute("loginUser");
-//		int userNo = user.getUserNo();
-		
-		// 사용자 고유번호를 임시로 1로 설정 
-		int userNo = 1;
+		if( user == null ) {
+			System.out.println("로그인 해야 장바구니에 담을 수 있습니다.");
+			response.sendRedirect(root + "/login");
+			return;
+		}
+		// 사용자 번호 
+		int userNo = user.getUserNo();
 		
 		// 1. 파라미터 확인 
 		String productNoParam = request.getParameter("productNo");
 		String quantityParam = request.getParameter("quantity");
 		
+		// 단일 구매
 		if(productNoParam != null &&  quantityParam != null) {
 			// 단일 상품 바로 구매 
 			int productNo = Integer.parseInt(productNoParam);
@@ -75,6 +84,7 @@ public class OrderServlet extends HttpServlet {
 			System.out.println("단일 상품 구매중 ");
 			request.setAttribute("cartList", List.of(singleCart));
 		} 
+		// 장바구니 구매
 		else {
 			CartDAO cartDao = new CartDAO();
 			
@@ -85,7 +95,8 @@ public class OrderServlet extends HttpServlet {
 				System.out.println(cart);
 				System.out.println(cart.getProduct());
 			}
-			
+			String isCart = request.getParameter("isCart");
+			request.setAttribute("isCart", isCart);
 			request.setAttribute("cartList", cartList);
 		}
 		
@@ -158,9 +169,32 @@ public class OrderServlet extends HttpServlet {
 			
 			System.out.println("order 객체의 주문코드 " + orderResult.getOrderCode());
 			
-			// 5. 장바구니 목록 조회 
-			CartService cartService = new CartServiceImpl(new CartDAO());
-			List<Cart> cartList = cartService.listByUserNo(userNo);
+			// ----- TODO: 제거--- 5. 장바구니 목록 조회 
+			// 5. 주문 상품 상세 목록
+			// - 상품번호
+			String[] productNoStringList = request.getParameterValues("productNo");
+			List<Integer> productNoList = new ArrayList<Integer>();
+			for (String productNoStr : productNoStringList) {
+				Integer productNo = Integer.parseInt(productNoStr);
+				productNoList.add(productNo);
+			}
+			// - 수량
+			String[] quantityStringList = request.getParameterValues("quantity");
+			List<Integer> quantityList = new ArrayList<Integer>();
+			for (String quantityStr : quantityStringList) {
+				Integer quantity = Integer.parseInt(quantityStr);
+				quantityList.add(quantity);
+			}
+			// - 가격
+			String[] priceStringList = request.getParameterValues("price");
+			List<Integer> priceList = new ArrayList<Integer>();
+			for (String priceStr : priceStringList) {
+				Integer price = Integer.parseInt(priceStr);
+				priceList.add(price);
+			}
+			
+			
+
 			
 			// 6. order_detail insert
 			OrderDetailService orderDetailService = new OrderDetailServiceImpl(new OrderDetailDAO());
@@ -168,19 +202,25 @@ public class OrderServlet extends HttpServlet {
 			System.out.println(order.getOrderNo());
 			
 			
-			for (Cart cart : cartList) {
+			for( int i = 0 ; i < productNoList.size() ; i++) {
 				OrderDetail detail = OrderDetail.builder()
 												.orderNo(orderResult.getOrderNo())
-												.productNo(cart.getProductNo())
-												.quantity(cart.getQuantity())
-												.price(cart.getProduct().getPrice())
+												.productNo(productNoList.get(i))
+												.quantity(quantityList.get(i))
+												.price(priceList.get(i))
 												.build();
 				
 				orderDetailService.insert(detail); 
 			}
 			
-			// 7. 장바구니 비우기 (구현 완료후 주석 해제) 
-//			cartService.clearCart(userNo);
+			// 7. 장바구니 비우기 (구현 완료후 주석 해제)
+			String isCart = request.getParameter("isCart");
+			System.out.println("장바구니주문 : isCart - " + isCart);
+			if( isCart != null && Boolean.parseBoolean(isCart) ) {
+				CartService cartService = new CartServiceImpl(new CartDAO());
+//				List<Cart> cartList = cartService.listByUserNo(userNo);
+				cartService.clearCart(userNo);
+			}
 			
 			
 			// 8. 주문 완료 페이지로 이동

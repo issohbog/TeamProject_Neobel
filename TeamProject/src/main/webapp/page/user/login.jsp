@@ -49,43 +49,47 @@
 <body>
 	<jsp:include page="/layout/header.jsp" />
 	<%-- [Contents] ######################################################### --%>
-		
 
-
-<main class="login">
-<section class="login-container">
- 	<h1 class="login-title">로그인</h1>
- 	<hr class="login-divider" />
- 	<form class="login-form">
- 	<div class="form-group">
- 		<label for="user-id">아이디</label>
-	 		<div class="input-group">
-	 			<input type="text" id="user-id" name="user-id" placeholder="ID" required />
-	 		</div>
-	 			<label for="password">비밀번호</label>
-		 			<div class="input-group">
-		 				<input type="password" id="password" name="password" placeholder="PASSWORD" required />
-
- 			</div>
-		 			<div class="login">
-		 				<button type="submit" class="btn-login">로그인</button>
-		 			</div>
-		 				<br>
-		 				<div class="group-form">
-		 				<p><small>
-		 					<a href="http://localhost:8080/TeamProject/page/user/searchid.jsp">아이디 찾기</a>
-		 				</small>
-		 				<small>|</small>
-		 				<small>
-		 				<a href="http://localhost:8080/TeamProject/page/user/searchpw.jsp">비밀번호 찾기</a></small>
-		 				<span style="margin-left: 520px;">
-		 				<small><a href="http://localhost:8080/TeamProject/page/user/join.jsp">회원가입</a></small>
-		 				</span>
-	 			        </div>
-		 	</div>
-		</form>
-	</section>
-</main>
+	<main class="login">
+		<section class="container my-5">
+		 	<h1 class="text-center fs-2">로그인</h1>
+		 	<hr class="login-divider" />
+		 	<form class="login-form" action="${ root }/login" method="post">
+			 	<div class="form-group">
+						<div class="input-group my-3">
+							<input type="text" class="form-control" id="userId" name="userId" placeholder="ID"
+								required />
+						</div>
+						<div class="input-group my-3">
+							<input type="password" class="form-control" id="userPw" name="userPw"
+								placeholder="userPw" required />
+						</div>
+						<div class="d-grid gap-2 my-3">
+							<button type="submit" class="btn btn-dark">로그인</button>
+						</div>
+						<br>
+						<div class="d-flex justify-content-between align-items-center mb-5">
+							<div>
+								<small> 
+									<a href="http://localhost:8080/TeamProject/page/user/searchid.jsp">아이디 찾기</a>
+								</small> 
+								<small>|</small> 
+								<small> 
+									<a href="http://localhost:8080/TeamProject/page/user/searchpw.jsp">비밀번호 찾기</a>
+								</small> 
+							</div>
+							<div>
+								<span> 
+									<small>
+										<a href="http://localhost:8080/TeamProject/page/user/join.jsp">회원가입</a>
+									</small>
+								</span>
+							</div>
+						</div>
+					</div>
+				</form>
+		</section>
+	</main>
 
 
 	

@@ -209,10 +209,9 @@ a {
 .join-divider {
   margin-bottom: 24px;
 }
+
 .join-form .form-group {
   margin-bottom: 18px;
-  
-  
 }
 .join-form label {
   display: block;
@@ -230,10 +229,13 @@ a {
   font-size: 1rem;
   margin-bottom: 4px;
 }
+
+/* TODO: 확인 후 제거
 .input-group, .phone-group, .birth-group, .email-group {
   display: flex;
   gap: 8px;
 }
+*/
 
 .btn-check {
 

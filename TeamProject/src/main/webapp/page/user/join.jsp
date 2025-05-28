@@ -19,114 +19,161 @@
 
 	<%-- [Contents] ######################################################### --%>
 
-
-    <main class="join">
-      <section class="join-container">
-        <h1 class="join-title">회원가입</h1>
-        <hr class="join-divider" />
-        <form class="join-form">
-          <div class="form-group">
-            <label for="user-id">아이디</label>
-              <div class="input-wrapper">
-              <input type="text" id="user-id" name="user-id" placeholder="ID" required />
-		        <button type="button" class="btn-check">중복확인</button>
-		        		<b><font size="4" color="gray">ID 중복 확인</font></b>
-			<br>
-			
-			<form name="checkIdForm">
-				<input type="text" name="id" value="${user_id}" id="userId" disabled>
+    <main>
+    	<div class="container my-5">
+            <h1 class="fs-4 text-center">회원가입</h1>
+            <div class="mt-4 mb-5">
+	            <hr>
+            </div>
+            <form class="my-5" method="post" action="${ root }/join">
+           	    <label class="" for="userId">아이디</label>
+            	<div class="input-group mb-3">
+				  <input type="text" name="userId" class="form-control" placeholder="아이디" aria-label="아이디" aria-describedby="button-addon2">
+				  <button class="btn btn-outline-secondary" type="button" id="button-addon2">중복확인</button>
+				</div>
+				
+				<div class="row">
+					<div class="col">
+					    <label class="" for="userPw">비밀번호</label>
+					    <div class="input-group mb-3">
+				  			<input type="password" name="userPw" class="form-control" placeholder="비밀번호" aria-label="비밀번호">
+				  		</div>
+					</div>
+					<div class="col">
+					    <label class="" for="userPw">비밀번호 확인</label>
+					    <div class="input-group mb-3">
+				  			<input type="password" name="userPw" class="form-control" placeholder="비밀번호 확인" aria-label="비밀번호 확인">
+				  		</div>
+					</div>
+				</div>
+				
+				<div class="row">
+					<div class="col">
+					    <label class="" for="userName">이름</label>
+					    <div class="input-group mb-3">
+				  			<input type="text" name="userName" class="form-control" placeholder="이름" aria-label="이름">
+				  		</div>
+					</div>
+				</div>
+				
+				<div class="row">
+					<div class="col">
+					    <label class="" for="postCode">우편번호</label>
+					    <div class="input-group mb-3">
+				  			<input type="text" name="postCode" class="form-control" placeholder="우편번호" aria-label="우편번호">
+				  		</div>
+					</div>
+				</div>
+				
+				<div class="row">
+					<div class="col">
+					    <label class="" for="addr">주소</label>
+					    <div class="input-group mb-3">
+				  			<input type="text" name="addr" class="form-control" placeholder="주소" aria-label="주소">
+				  		</div>
+					</div>
+				</div>
+				
+				<div class="row">
+					<div class="col">
+					    <label class="" for="addrDetail">상세주소</label>
+					    <div class="input-group mb-3">
+				  			<input type="text" name="addrDetail" class="form-control" placeholder="상세주소" aria-label="상세주소">
+				  		</div>
+					</div>
+				</div>
+				
+				<div class="row">
+					<div class="col">
+					    <label class="" for="req">배송요청사항</label>
+					    <div class="input-group mb-3">
+				  			<input type="text" name="req" class="form-control" placeholder="배송요청사항" aria-label="배송요청사항">
+				  		</div>
+					</div>
+				</div>
+				
+				<div class="row">
+					<div class="col">
+					    <label class="" for="phone1">휴대폰</label>
+					    <div class="input-group mb-3">
+				  			<input type="text" name="phone1" class="form-control" placeholder="" aria-label="휴대폰1">
+				  		</div>
+					</div>
+					<div class="col">
+						<label class="" for="phone2"></label>
+					    <div class="input-group mb-3">
+				  			<input type="text" name="phone2" class="form-control" placeholder="" aria-label="휴대폰2">
+				  		</div>
+					</div>
+					<div class="col">
+						<label class="" for="phone3"></label>
+					    <div class="input-group mb-3">
+				  			<input type="text" name="phone3" class="form-control" placeholder="" aria-label="휴대폰3">
+				  		</div>
+					</div>
+				</div>
+				
+				<div class="d-flex align-items-center justify-content-start gap-2">
+					<div class="">
+					    <label class="" for="birth1">생년월일</label>
+					    <div class="input-group mb-3">
+				  			<input type="text" name="birth1" class="form-control" placeholder="" aria-label="생년월일">
+				  		</div>
+					</div>
+					<div class="">
+						<label class="" for=""></label>
+					    <p>년</p>
+					</div>
+					<div class="">
+						<label class="" for="birth2"></label>
+					    <div class="input-group mb-3">
+				  			<input type="text" name="birth2" class="form-control" placeholder="" aria-label="생년월일">
+				  		</div>
+					</div>
+					<div class="">
+						<label class="" for=""></label>
+					    <p>월</p>
+					</div>
+					<div class="">
+						<label class="" for="birth3"></label>
+					    <div class="input-group mb-3">
+				  			<input type="text" name="birth3" class="form-control" placeholder="" aria-label="생년월일">
+				  		</div>
+					</div>
+					<div class="">
+						<label class="" for=""></label>
+					    <p>일</p>
+					</div>
+				</div>
+				
+				
+				<div class="d-flex align-items-center justify-content-start gap-2">
+					<div class="">
+					    <label class="" for="email1">이메일</label>
+					    <div class="input-group mb-3">
+				  			<input type="text" name="email1" class="form-control" placeholder="" aria-label="이메일1">
+				  		</div>
+					</div>
+					<div class="">
+						<label class="" for=""></label>
+					    <p class="text-center">@</p>
+					</div>
+					<div class="">
+						<label class="" for="email2"></label>
+					    <div class="input-group mb-3">
+				  			<input type="text" name="email2" class="form-control" placeholder="" aria-label="이메일2">
+				  		</div>
+					</div>
 					
-				<c:choose>
-				<c:when test="${result==1}">
-					<p style="color: red">이미 사용 중인 아이디입니다.</p>
-					<input type="hidden" name="chResult" value="N"/>
-				</c:when>
-				<c:when test="${result==0 }">
-					<p style="color: red">사용가능한 아이디입니다.</p>
-					<input type="hidden" name="chResult" value="Y"/>
-				</c:when>
-				<c:otherwise>
-					<p>오류 발생(-1)</p>
-					<input type="hidden" name="chResult" value="N"/>
-				</c:otherwise>
-				</c:choose>
-		
-				<input type="button" onclick="window.close()" value="취소"/><br>
-				<input type="button" onclick="sendCheckValue()" value="사용하기"/>
-		
-			</form>
-              </div>              
-            <small>(영문소문자/숫자, 4~16자)</small>
-          </div>
-          <div class="form-group">
-            <label for="password">비밀번호</label>
-            <input type="password" id="password" name="password" placeholder="PASSWORD" required />
-            <small>(영문 대소문자/숫자/특수문자 중 2가지 이상 조합, 8~16자)</small>
-          </div>
-          <div class="form-group">
-            <label for="password-confirm">비밀번호 확인</label>
-            <input type="password" id="password-confirm" name="password-confirm" placeholder="PASSWORD" required />
-          </div>
-          <div class="form-group">
-            <label for="name">이름</label>
-            <input type="text" id="name" name="name" placeholder="이름" required />
-          </div>
-          <div class="form-group">
-            <label for="post">우편번호</label>
-            <input type="text" id="postal" name="postalnumber" placeholder="우편번호" required />
-          </div>
-          <div class="form-group">
-            <label for="address">주소</label>
-            <input type="text" id="address" name="address" placeholder="주소" required />
-          </div>
-          <div class="form-group">
-            <label for="detailed-address">상세주소</label>
-            <input type="text" id="detailed-address" name="detailed-address" placeholder="상세주소" required />
-          </div>
-          <div class="form-group">
-            <label for="delivery-message">배송요청사항</label>
-            <input type="text" id="delivery-message" name="delivery-message" placeholder="배송요청사항" />
-          </div>
-          <div class="form-group">
-            <label>휴대폰</label>
-            <div class="phone-group">
-              <input type="tel" id="phone-1" name="phone-1" placeholder="NUMBER 1" required />
-              <input type="tel" id="phone-2" name="phone-2" placeholder="NUMBER 2" required />
-              <input type="tel" id="phone-3" name="phone-3" placeholder="NUMBER 3" required />
-            </div>
-          </div>
-          <div class="form-group">
-            <label>생년월일</label>
-            <div class="birth-group">
-              <input type="number" id="birth-year" name="birth-year" placeholder="NUMBER 1" required />
-              <span>년</span>
-              <input type="number" id="birth-month" name="birth-month" placeholder="NUMBER 2" required />
-              <span>월</span>
-              <input type="number" id="birth-day" name="birth-day" placeholder="NUMBER 3" required />
-              <span>일</span>
-            </div>
-          </div>
-          <div class="form-group">
-            <label>이메일</label>
-            <div class="email-group">
-              <input type="text" id="email-id" name="email-id" placeholder="이메일" required />
-              <span>@</span>
-              <input type="text" id="email-domain" name="email-domain" placeholder="이메일" required />
-            </div>
-          </div>
-          <div class="form-group">
-            <label for="referral-code">결제방법</label>
-            <input type="text" id="referral-code" name="referral-code" placeholder="결제방법" />
-          </div>
-          <button type="submit" class="btn-join">회원가입</button>
-          <button type="submit" class="btn-cancelation">취소</button>
-            
-          
-        </form>
-      </section>
+				</div>
+				
+				<div class="d-grid gap-2 my-4">
+					<button type="submit" class="btn btn-dark">회원가입</button>
+	          		<button type="submit" class="btn btn-light">취소</button>
+				</div>
+            </form>
+        </div>
     </main>
-
-
 
 	
 	<%-- [Contents] ######################################################### --%>
@@ -134,3 +181,15 @@
 	<jsp:include page="/layout/script.jsp" />
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+

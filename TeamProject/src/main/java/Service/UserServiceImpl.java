@@ -7,7 +7,7 @@ import java.util.Map;
 import DAO.UserDAO;
 import DTO.User;
 
-public class UserServiceImpl extends BaseServiceImpl<UserDAO, User> implements  UserService{
+public class UserServiceImpl extends BaseServiceImpl<UserDAO, User> implements  UserService {
 
 	public UserServiceImpl(UserDAO dao) {
 		super(dao);
@@ -30,9 +30,43 @@ public class UserServiceImpl extends BaseServiceImpl<UserDAO, User> implements  
 		return user;
 		
 	}
+
+	@Override
+	public User login(String userId, String userPw) {
+		HashMap<String, Object> map = new HashMap<>();
+		map.put("user_id", userId);
+		User user = null;
+		try {
+			user = dao.selectBy(map);
+			
+			if (user != null && user.getUserPw().equals(userPw)) {
+				return user; // 로그인 성공
+			} else {
+				return null; // 로그인 실패
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
 	
 	
 
 	
 
 } 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
