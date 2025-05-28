@@ -98,8 +98,9 @@
 		</div>
 		<div class="cart-footer">
         <form action="${root}/order/" method="get">
-				<button id="buy-btn" type="submit" class="buy-btn">구매하기</button>
-			</form>
+        	<input type="hidden" name="isCart" value="true"/>	
+			<button id="buy-btn" type="submit" class="buy-btn">구매하기</button>
+		</form>
 		</div>
 	</div>
 	

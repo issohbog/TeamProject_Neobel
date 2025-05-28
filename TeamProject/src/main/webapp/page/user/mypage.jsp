@@ -71,9 +71,7 @@
 		    <input type="text" id="delivery-message" name="req" value="${user.req}" class="form-control" placeholder="배송요청사항" />
 		  </div>
 		  
-		  <div class="d-grid gap-2 my-4">
-		  	<button type="button" class="orderResult" id="orderResult" onclick="location.href='${pageContext.request.contextPath}/page/order/orderResult.jsp'" >주문 내역 조회</button>
-		  </div>
+		  
 		    
 		    
 		  <div class="form-group">
@@ -105,12 +103,15 @@
 		      <input type="text" id="email-domain" name="email2" value="${fn:split(user.email, '@')[1]}" class="form-control" placeholder="도메인" required />
 		    </div>
 		  </div>
-		
+		  <%--
 		  <div class="form-group">
 		    <label for="referral-code">결제방법</label>
 		    <input type="text" id="referral-code" name="referral-code" class="form-control" placeholder="결제방법" />
 		  </div>
-		
+		  --%>
+		<div class="d-grid gap-2 my-4">
+		  	<button type="button" class="orderResult" id="orderResult" onclick="location.href='${pageContext.request.contextPath}/order/history'" >주문 내역 조회</button>
+		  </div>
 		  
 		  <div class="d-grid gap-2 my-4">
 				<button type="submit" class="btn btn-dark">저장</button>

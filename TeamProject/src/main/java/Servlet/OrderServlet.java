@@ -95,7 +95,8 @@ public class OrderServlet extends HttpServlet {
 				System.out.println(cart);
 				System.out.println(cart.getProduct());
 			}
-			
+			String isCart = request.getParameter("isCart");
+			request.setAttribute("isCart", isCart);
 			request.setAttribute("cartList", cartList);
 		}
 		
@@ -193,8 +194,7 @@ public class OrderServlet extends HttpServlet {
 			}
 			
 			
-//			CartService cartService = new CartServiceImpl(new CartDAO());
-//			List<Cart> cartList = cartService.listByUserNo(userNo);
+
 			
 			// 6. order_detail insert
 			OrderDetailService orderDetailService = new OrderDetailServiceImpl(new OrderDetailDAO());
@@ -213,8 +213,14 @@ public class OrderServlet extends HttpServlet {
 				orderDetailService.insert(detail); 
 			}
 			
-			// 7. 장바구니 비우기 (구현 완료후 주석 해제) 
-//			cartService.clearCart(userNo);
+			// 7. 장바구니 비우기 (구현 완료후 주석 해제)
+			String isCart = request.getParameter("isCart");
+			System.out.println("장바구니주문 : isCart - " + isCart);
+			if( isCart != null && Boolean.parseBoolean(isCart) ) {
+				CartService cartService = new CartServiceImpl(new CartDAO());
+//				List<Cart> cartList = cartService.listByUserNo(userNo);
+				cartService.clearCart(userNo);
+			}
 			
 			
 			// 8. 주문 완료 페이지로 이동
