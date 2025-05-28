@@ -228,13 +228,10 @@ public class CartServlet extends HttpServlet {
 	    
 	    
 	    if ("/clear".equals(path)) {
-//			HttpSession session = request.getSession();
-//			User user = (User) session.getAttribute("loginUser");
-//			int userNo = user.getUserNo();
+			HttpSession session = request.getSession();
+			User user = (User) session.getAttribute("loginUser");
+			int userNo = user.getUserNo();
 			
-			// 사용자 고유번호를 임시로 1로 설정 
-			int userNo = 1;
-
 	        boolean result = cartService.clearCart(userNo);
 
 	        if (result) {

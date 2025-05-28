@@ -13,6 +13,7 @@
 	<jsp:include page="/layout/header.jsp" />
 	<%-- [Contents] ######################################################### --%>
 	<form action="${root}/order/" method="post">
+		<input type="hidden" name="isCart" value="${ isCart }"/>
 		<div class="payment-container">
 			
 		    <!-- 제목 -->
