@@ -243,5 +243,7 @@ a {
 
 small {
   color: #888;
-  font-size: 0.9em;
+  font-size: 12px;
+  font-weight: lighter;
+
 }
