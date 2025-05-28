@@ -17,8 +17,8 @@
     <section class="notice-box">
       <h1>공지사항</h1>
       <div class="title">
-      	<h3>SUBTITLE</h3>
-     	 <h3>DATE</h3>
+      	<p class="subtitle">SUBTITLE</p>
+     	 <p class="title-date">DATE</p>
       </div>
       
       <div class="notice-list">

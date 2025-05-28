@@ -59,6 +59,17 @@ body {
   
 }
 
+
+.subtitle {
+	font-size: 15px;
+	text-align: center;
+	font-weight: 200;
+}
+.title-date{
+	font-size: 15px;
+	text-align: center;
+	font-weight: 200;
+}
 /* 각 항목 */
 .notice-item {
   display: flex;
