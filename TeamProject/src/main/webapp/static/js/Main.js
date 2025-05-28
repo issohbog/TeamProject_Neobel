@@ -12,7 +12,7 @@
 
 //드롭다운 메뉴
 
-    const personMenu = document.querySelector('.person-menu > a');
+const personMenu = document.querySelector('.person-menu > a');
 const dropdown = document.querySelector('.person-menu .dropdown');
 
 personMenu.addEventListener('click', (e) => {
@@ -59,3 +59,6 @@ slider.addEventListener('mousemove', (e) => {
   const walk = (x - startX) * 1.5; // 드래그 민감도
   slider.scrollLeft = scrollLeft - walk;
 });
+
+
+
