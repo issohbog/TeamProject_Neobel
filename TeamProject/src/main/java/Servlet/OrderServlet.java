@@ -116,10 +116,21 @@ public class OrderServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
 		
+		
+		// userNo를 세션에서 받아오기
+		HttpSession session = request.getSession();
+		User loginUser = (User) session.getAttribute("loginUser");	
+		
+		if (loginUser == null) {
+			response.sendRedirect(request.getContextPath() + "/login.jsp");
+			return;  
+		}
+		
+		Integer userNo = loginUser.getUserNo();
+		System.out.println("주문서userNo: " + userNo);
+		
+
 		// 1. form에서 전송된 데이터 받기 
-		// user구현 완료되면 주석 해제하고, 세션에서 받아오기
-//		 int userNo = Integer.parseInt(request.getParameter("userNo"));
-		int userNo = 5; 
 		int totalPrice = Integer.parseInt(request.getParameter("totalPrice"));
 		String payment = request.getParameter("payment");
 		
