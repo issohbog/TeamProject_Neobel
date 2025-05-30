@@ -50,7 +50,9 @@
 							</td>
 							<td class="price-info">
 								
-								<div class="sale-price">${cart.product.price}</div>
+								<div class="sale-price">
+								<fmt:formatNumber value="${cart.product.price}" type="number" />
+								</div>
 							</td>
 							<td>
 								<div class="quantity-container"> 

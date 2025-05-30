@@ -118,8 +118,8 @@ public class OrderServlet extends HttpServlet {
 		
 		// 1. form에서 전송된 데이터 받기 
 		// user구현 완료되면 주석 해제하고, 세션에서 받아오기
-		// int userNo = Integer.parseInt(request.getParameter("userNo"));
-		int userNo = 1; 
+//		 int userNo = Integer.parseInt(request.getParameter("userNo"));
+		int userNo = 5; 
 		int totalPrice = Integer.parseInt(request.getParameter("totalPrice"));
 		String payment = request.getParameter("payment");
 		
