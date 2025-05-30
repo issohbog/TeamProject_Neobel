@@ -31,14 +31,16 @@
     <table class="info-table">
       <tr>
         <th>최종결제금액</th>
-        <td>${order.totalPrice}</td>
+        <td><fmt:formatNumber value="${order.totalPrice}" type="number" /></td>
       </tr>
       <tr>
         <th>결제수단</th>
         <td>
           ${order.payment}<br>
-          입금자 : ${order.name}<br> 
-          계좌번호 : 하나은행 183-310033-77004 (주)로컴퍼니
+          <c:if test="${order.payment eq '무통장입금'}">
+      		<br>입금자 : ${order.name}<br>
+     			계좌번호 : 하나은행 183-310033-77004 (주)로컴퍼니
+          </c:if>
         </td>
       </tr>
     </table>
@@ -66,7 +68,7 @@
     <table class="info-table">
       <tr>
         <th>총 주문 금액</th>
-        <td>${order.totalPrice}</td>
+        <td><fmt:formatNumber value="${order.totalPrice}" type="number" /></td>
       </tr>
     </table>
 
