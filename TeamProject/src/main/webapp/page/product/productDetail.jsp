@@ -31,7 +31,7 @@
                 </div>
 
                 <div class="product-price-box3">
-                    <span id="unit-price3">${product.price}원</span>
+                    <span id="unit-price3"><fmt:formatNumber value="${product.price}" type="number" /></span>
                 </div>
 
                 <div class="quantity-box3" id="product3" data-price="${product.price}">
@@ -45,7 +45,7 @@
                 <div class="total-price-box3">
                     <div class="total3"><span>총 상품 금액</span></div>
                     <div class="price3">
-                        <span id="total-price3">${product.price}</span>원
+                        <span id="total-price3"><fmt:formatNumber value="${product.price}" type="number" /></span>원
                     </div>
                 </div>
 

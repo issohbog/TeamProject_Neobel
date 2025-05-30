@@ -30,7 +30,7 @@ public class OrderHistoryServlet extends HttpServlet {
 //		}
 		
 		
-		int userNo = 1;
+		int userNo = 5;
 		List<Order> orders = orderService.getOrderByUserNo(userNo); 
 		request.setAttribute("orders", orders);
 		System.out.println(orders);

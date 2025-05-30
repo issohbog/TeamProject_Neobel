@@ -29,7 +29,8 @@
 			                <p class="product-desc2">${product.description}</p>
 			            </div>
 			            <div class="price-box2">
-			                <p class="product-price2">${product.price}</p>
+			                <p class="product-price2"><fmt:formatNumber value="${product.price}" type="number" /></p>
+			                
 			            </div>
 			        </a>
 		        </div>
