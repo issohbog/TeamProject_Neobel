@@ -56,6 +56,7 @@ public class OrderResultServlet extends HttpServlet {
 			} else {
 				// 주문이 존재하지 않으면 실패 처리 
 				response.sendRedirect(request.getContextPath() + "/errorPage.jsp");
+				console.log();
 			} 
 		} else {
 			// orderNo가 없으면 잘못된 접근 처리 
