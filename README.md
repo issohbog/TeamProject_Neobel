@@ -1,4 +1,4 @@
-# Neobel
+# Neobel (화장품 쇼핑몰 프로젝트)
 <img width="1905" height="916" alt="메인화면" src="https://github.com/user-attachments/assets/9612d433-df65-49e1-ac19-784a1a1b8692" />
 
 
